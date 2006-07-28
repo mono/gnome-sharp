@@ -1,5 +1,5 @@
-assemblies = ../../glib/glib-sharp.dll ../../pango/pango-sharp.dll ../../atk/atk-sharp.dll ../../gdk/gdk-sharp.dll ../../gtk/gtk-sharp.dll ../../art/art-sharp.dll ../../rsvg/rsvg-sharp.dll
-references = $(addprefix /r:, $(assemblies))
+assemblies = ../../art/art-sharp.dll ../../rsvg/rsvg-sharp.dll
+references = $(GTKSHARP_LIBS) $(addprefix /r:, $(assemblies))
 
 if ENABLE_RSVG
 TARGETS = svghelloworld.exe

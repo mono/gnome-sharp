@@ -6,10 +6,10 @@ else
 pkg = 
 endif
 
-INCLUDE_API = ../pango/pango-api.xml ../atk/atk-api.xml ../gdk/gdk-api.xml ../gtk/gtk-api.xml ../art/art-api.xml
+INCLUDE_API = ../art/art-api.xml
 METADATA = Rsvg.metadata
 SYMBOLS =
-references = ../glib/glib-sharp.dll ../pango/pango-sharp.dll ../atk/atk-sharp.dll ../gdk/gdk-sharp.dll ../gtk/gtk-sharp.dll ../art/art-sharp.dll
+references = ../art/art-sharp.dll
 
 sources =			\
 	Tool.cs

@@ -7,9 +7,9 @@ pkg =
 endif
 
 SYMBOLS = art-symbols.xml
-INCLUDE_API = ../pango/pango-api.xml ../atk/atk-api.xml ../gdk/gdk-api.xml
+INCLUDE_API = 
 METADATA = Art.metadata
-references = ../glib/glib-sharp.dll ../pango/pango-sharp.dll ../atk/atk-sharp.dll ../gdk/gdk-sharp.dll 
+references =
 
 sources =
 

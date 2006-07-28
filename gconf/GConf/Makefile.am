@@ -20,8 +20,7 @@ EXTRA_DIST =			\
 	$(ASSEMBLY).config.in	\
 	gconf-sharp-2.0.pc.in
 
-references = 			\
-	/r:../../glib/glib-sharp.dll
+references = $(GTKSHARP_LIBS)
 
 sources = 			\
 	ClientBase.cs 		\

@@ -10,7 +10,7 @@ endif
 
 SYMBOLS = gnomevfs-symbols.xml
 METADATA = Gnomevfs.metadata
-references = ../glib/glib-sharp.dll
+references =
 
 sources = 					\
 	Async.cs				\

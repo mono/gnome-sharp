@@ -1,0 +1,80 @@
+The Gtk#/Gnome# website can be found at: http://gtk-sharp.sourceforge.net/
+
+Gnome# is a .NET language binding for assorted GNOME libraries.  Gnome# is 
+free software, licensed under the GNU LGPL.
+
+Building & Installing Gnome#:
+---------------------------
+
+    The build is the traditional:
+
+        ./configure
+        make
+        make install
+
+    You may want to consider using configure's prefix option to install
+    Gnome# using the same prefix as Mono.  That way all of your .NET assemblies
+    get placed in the same place, and you don't need to do any extra "configuring"
+    to make it so mono can find your assemblies.  In other words,
+    doing something like:
+
+        ./bootstrap-<version> --prefix=/the/path/that/was/used/for/mono
+        make
+        make install
+
+    (Of course, replace "/the/path/that/was/used/for/mono" with whatever path
+    which was used for Mono.  This might have been "/usr", "/usr/local", or
+    something similar.)
+
+Discussion & Support:
+---------------------
+
+    A mailing list for Gnome# discussion is available.
+
+    You can subscribe to the mailing list by visiting:
+
+        http://lists.ximian.com/mailman/listinfo/gtk-sharp-list
+
+    And following the instructions (on that page) to subscribe.
+    Messages are posted on this mailing list by sending them to:
+
+        gtk-sharp-list@ximian.com
+
+    (The mailing list requires you to subscribe in order to post
+    messages.)
+
+    An archive of this mailing list can be found at:
+
+        http://lists.ximian.com/archives/public/gtk-sharp-list/
+
+    Further, a Wiki is available for Gnome#, and can be found at:
+
+        http://www.nullenvoid.com/gtksharp/wiki/
+
+    Also, people can get help with and discuss Gtk# on IRC via the
+    #mono channel on the irc.gnome.org IRC server.
+
+    People looking for general help with C# should visit the
+    #c# channel on irc.freenode.net IRC server.
+
+
+Developers:
+-----------
+
+    For developers wishing to "get started" with Gnome#, they are encouraged
+    to read the Mono Hand Book:
+
+        http://www.go-mono.com/tutorial
+
+    In the Mono Hand Book, Chapter 21 is on Gtk#.  (In the Mono Hand Book,
+    the Gtk# .NET bindings are refered to as GNOME.NET.)
+
+
+Hackers:
+--------
+
+    For those who wish to help with the development of Gnome#, they should
+    read the file named: HACKING.
+
+    Also, anyone wishing to hack Gnome# is encouraged to join the Gtk#
+    mailing list.  And to visit the #mono IRC channel (on irc.gnome.org).

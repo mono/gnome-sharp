@@ -10,8 +10,8 @@ FILES = 		\
 
 SCHEMA = $(srcdir)/sample.schema
 RESOURCES = /resource:$(srcdir)/sample.glade
-ASSEMBLIES = ../../glib/glib-sharp.dll ../../pango/pango-sharp.dll ../../atk/atk-sharp.dll ../../art/art-sharp.dll ../../gdk/gdk-sharp.dll $(GCONFDIR)/GConf/gconf-sharp.dll ../../gtk/gtk-sharp.dll ../../gnome/gnome-sharp.dll ../../glade/glade-sharp.dll $(GCONFDIR)/GConf.PropertyEditors/gconf-sharp-peditors.dll
-REFERENCES = $(addprefix /r:, $(ASSEMBLIES))
+ASSEMBLIES = ../../art/art-sharp.dll $(GCONFDIR)/GConf/gconf-sharp.dll ../../gnome/gnome-sharp.dll $(GCONFDIR)/GConf.PropertyEditors/gconf-sharp-peditors.dll
+REFERENCES = $(GTKSHARP_LIBS) $(GLADESHARP_LIBS) $(addprefix /r:, $(ASSEMBLIES))
 
 top_builddir=../..
 GCONFDIR=$(top_builddir)/gconf

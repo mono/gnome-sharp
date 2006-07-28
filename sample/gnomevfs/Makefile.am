@@ -25,8 +25,8 @@ TARGETS =
 EXTRA_TARGETS =
 endif
 
-assemblies=../../glib/glib-sharp.dll ../../gnomevfs/gnome-vfs-sharp.dll
-references = $(addprefix /r:, $(assemblies))
+assemblies=../../gnomevfs/gnome-vfs-sharp.dll
+references = $(GTKSHARP_LIBS) $(addprefix /r:, $(assemblies))
 
 noinst_SCRIPTS = $(TARGETS) $(EXTRA_TARGETS)
 CLEANFILES = $(TARGETS) $(EXTRA_TARGETS)

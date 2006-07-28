@@ -17,7 +17,9 @@ EXTRA_DIST =				\
 	$(sources)
 
 references = 			\
-	/r:../../glib/glib-sharp.dll /r:../../pango/pango-sharp.dll /r:../../atk/atk-sharp.dll /r:../../gdk/gdk-sharp.dll /r:../../gtk/gtk-sharp.dll /r:../../art/art-sharp.dll /r:../../gnome/gnome-sharp.dll /r:../../glade/glade-sharp.dll /r:../GConf/gconf-sharp.dll
+	$(GTKSHARP_LIBS)	\
+	$(GLADESHARP_LIBS)	\
+	/r:../../art/art-sharp.dll /r:../../gnome/gnome-sharp.dll /r:../GConf/gconf-sharp.dll
 
 sources = 				\
 	PropertyEditor.cs 		\
