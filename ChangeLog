@@ -1,3 +1,11 @@
+2006-08-03  Mike Kestner  <mkestner@novell.com>
+
+	* gnome/Gnome.metadata : wildcard CanvasPathDef rules since
+	they went from struct to boxed in 2.16.  Hide TextWidth and TextHeight
+	props on CanvasText.
+	* gnome/CanvasText.custom : manual impl of Text(Width|Height) to be
+	compat with previous releases.  They removed the WRITE flag.
+
 2006-07-28  Mike Kestner  <mkestner@novell.com>
 
 	* adjustments to build system for gnome-sharp to make it 

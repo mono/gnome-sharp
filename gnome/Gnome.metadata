@@ -73,6 +73,8 @@
   <attr path="/api/namespace/object[@cname='GnomeCanvasItem']/signal[@name='Event']" name="name">CanvasEvent</attr>
   <attr path="/api/namespace/object[@cname='GnomeCanvasRichText']/method[@name='GetIterLocation']/*/*[@name='location']" name="pass_as">out</attr>
   <attr path="/api/namespace/object[@cname='GnomeCanvasRichText']/method[@name='GetIterAtLocation']/*/*[@name='iter']" name="pass_as">out</attr>
+  <attr path="/api/namespace/object[@cname='GnomeCanvasText']/property[@name='TextHeight']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GnomeCanvasText']/property[@name='TextWidth']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GnomeCanvasShape']/property[@name='Dash']" name="type">ArtVpathDash</attr>
   <attr path="/api/namespace/object[@cname='GnomeClient']/signal[@name='Connect']" name="name">Connected</attr>
   <attr path="/api/namespace/object[@cname='GnomeClient']/signal[@name='Disconnect']" name="name">Disconnected</attr>
@@ -152,15 +154,15 @@
   <attr path="/api/namespace/object[@cname='PanelApplet']/method[@cname='panel_applet_get_flags']" name="new_flag">1</attr>
   <attr path="/api/namespace/object[@cname='PanelApplet']/method[@cname='panel_applet_set_flasg']" name="new_flag">1</attr>
   <attr path="/api/namespace/object[@cname='PanelApplet']" name="abstract">1</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='Curveto']" name="name">CurveTo</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='Lineto']" name="name">LineTo</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='LinetoMoving']" name="name">LineToMoving</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='Moveto']" name="name">MoveTo</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='Ref']" name="deprecated">1</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="element_type">GnomeCanvasPathDef*</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="owned">true</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="elements_owned">true</attr>
-  <attr path="/api/namespace/struct[@cname='GnomeCanvasPathDef']/method[@name='Unref']" name="deprecated">1</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Curveto']" name="name">CurveTo</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Lineto']" name="name">LineTo</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='LinetoMoving']" name="name">LineToMoving</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Moveto']" name="name">MoveTo</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Ref']" name="deprecated">1</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="element_type">GnomeCanvasPathDef*</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="owned">true</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="elements_owned">true</attr>
+  <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Unref']" name="deprecated">1</attr>
   <attr path="/api/namespace/struct[@cname='GnomeModuleRequirement']" name="hidden">1</attr>
   <attr path="/api/namespace/struct[@cname='GnomePrintPaper']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/struct[@cname='GnomeThemeFile']/method[@name='Free']" name="deprecated">1</attr>

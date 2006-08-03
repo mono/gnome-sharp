@@ -4,6 +4,7 @@
 // Author: Rachel Hestilow <hestilow@ximian.com>
 //
 // Copyright (C) 2002 Rachel Hestilow
+// Copyright (c) 2006 Novell, Inc.
 //
 // This code is inserted after the automatically generated code.
 //
@@ -26,4 +27,32 @@
 public CanvasText (Gnome.CanvasGroup group) : base (group, GType)
 {
 }
+
+		// to provide backcompat with 2.4/2.6/2.8
+		// WRITE was removed in libgnomecanvas-2.14
+		[GLib.Property ("text_width")]
+		public double TextWidth {
+			get {
+				GLib.Value val = GetProperty ("text_width");
+				double ret = (double) val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+			}
+		}
+
+		// to provide backcompat with 2.4/2.6/2.8
+		// WRITE was removed in libgnomecanvas-2.14
+		[GLib.Property ("text_height")]
+		public double TextHeight {
+			get {
+				GLib.Value val = GetProperty ("text_height");
+				double ret = (double) val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+			}
+		}
 
