@@ -13,7 +13,7 @@ GNOME_2_16_DOWNLOADS = \
 	http://ftp.gnome.org/pub/GNOME/desktop/2.15/2.15.4/sources/gnome-panel-2.14.2.tar.bz2		\
 	http://ftp.gnome.org/pub/GNOME/desktop/2.6/2.6.0/sources/libart_lgpl-2.3.16.tar.bz2	\
 	http://ftp.gnome.org/pub/GNOME/desktop/2.6/2.6.0/sources/librsvg-2.6.4.tar.bz2         	\
-	http://ftp.gnome.org/pub/GNOME/desktop/2.6/2.6.0/sources/vte-0.11.10.tar.bz2
+	http://ftp.gnome.org/pub/GNOME/desktop/2.15/2.15.90/sources/vte-0.13.4.tar.bz2
 
 GTKHTML_SOURCEFILES = \
         gtkhtml-3.0.10/src/gtkhtml.c \

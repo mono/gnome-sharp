@@ -16,7 +16,8 @@ glue_includes = vte/vte.h
 
 sources = 
 
-customs =
+customs =			\
+	Bg.custom
 
 add_dist = vte-sharp-2.0.pc.in
 

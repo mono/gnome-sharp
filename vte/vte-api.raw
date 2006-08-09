@@ -27,6 +27,12 @@
       <member cname="VTE_DEBUG_CURSOR" name="Cursor" value="1 &lt;&lt; 10" />
       <member cname="VTE_DEBUG_KEYBOARD" name="Keyboard" value="1 &lt;&lt; 11" />
       <member cname="VTE_DEBUG_LIFECYCLE" name="Lifecycle" value="1 &lt;&lt; 12" />
+      <member cname="VTE_DEBUG_TRIE" name="Trie" value="1 &lt;&lt; 13" />
+    </enum>
+    <enum name="TerminalAntiAlias" cname="VteTerminalAntiAlias" gtype="vte_terminal_anti_alias_get_type" type="enum">
+      <member cname="VTE_ANTI_ALIAS_USE_DEFAULT" name="UseDefault" />
+      <member cname="VTE_ANTI_ALIAS_FORCE_ENABLE" name="ForceEnable" />
+      <member cname="VTE_ANTI_ALIAS_FORCE_DISABLE" name="ForceDisable" />
     </enum>
     <enum name="TerminalEraseBinding" cname="VteTerminalEraseBinding" gtype="vte_terminal_erase_binding_get_type" type="enum">
       <member cname="VTE_ERASE_AUTO" name="Auto" />
@@ -49,7 +55,17 @@
         <parameter type="gpointer" name="data" />
       </parameters>
     </callback>
+    <callback name="TerminalSequenceHandler" cname="VteTerminalSequenceHandler">
+      <return-type type="gboolean" />
+      <parameters>
+        <parameter type="VteTerminal*" name="terminal" />
+        <parameter type="const-char*" name="match" />
+        <parameter type="GQuark" name="match_quark" />
+        <parameter type="GValueArray*" name="params" />
+      </parameters>
+    </callback>
     <object name="Bg" cname="VteBg" parent="GObject">
+      <field name="Screen" cname="screen" type="GdkScreen*" />
       <field name="RootPixmap" cname="root_pixmap" type="GdkPixmap*" />
       <field name="Native" cname="native" type="struct-VteBgNative*" />
       <field name="Pvt" cname="pvt" type="struct-VteBgPrivate*" />
@@ -59,8 +75,11 @@
           <parameter name="inst" type="VteBg*" />
         </parameters>
       </signal>
-      <method name="Get" cname="vte_bg_get" shared="true">
+      <method name="GetForScreen" cname="vte_bg_get_for_screen" shared="true">
         <return-type type="VteBg*" />
+        <parameters>
+          <parameter type="GdkScreen*" name="screen" />
+        </parameters>
       </method>
       <method name="GetPixbuf" cname="vte_bg_get_pixbuf">
         <return-type type="GdkPixbuf*" />
@@ -98,6 +117,12 @@
           <parameter name="p1" type="gint32" />
         </parameters>
       </signal>
+      <method name="AddChild" cname="vte_reaper_add_child" shared="true">
+        <return-type type="int" />
+        <parameters>
+          <parameter type="GPid" name="pid" />
+        </parameters>
+      </method>
       <method name="Get" cname="vte_reaper_get" shared="true">
         <return-type type="VteReaper*" />
       </method>
@@ -119,172 +144,172 @@
       <signal name="Eof" cname="eof" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="ChildExited" cname="child-exited" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="WindowTitleChanged" cname="window-title-changed" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="IconTitleChanged" cname="icon-title-changed" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="EncodingChanged" cname="encoding-changed" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="Commit" cname="commit" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
-          <parameter name="p0" type="gchar*" />
-          <parameter name="p1" type="guint32" />
+          <parameter type="VteTerminal*" name="terminal" />
+          <parameter type="gchar*" name="text" />
+          <parameter type="guint" name="size" />
         </parameters>
       </signal>
       <signal name="EmulationChanged" cname="emulation-changed" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="CharSizeChanged" cname="char-size-changed" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
-          <parameter name="p0" type="guint32" />
-          <parameter name="p1" type="guint32" />
+          <parameter type="VteTerminal*" name="terminal" />
+          <parameter type="guint" name="char_width" />
+          <parameter type="guint" name="char_height" />
         </parameters>
       </signal>
       <signal name="SelectionChanged" cname="selection-changed" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="ContentsChanged" cname="contents-changed" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="CursorMoved" cname="cursor-moved" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="DeiconifyWindow" cname="deiconify-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="IconifyWindow" cname="iconify-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="RaiseWindow" cname="raise-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="LowerWindow" cname="lower-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="RefreshWindow" cname="refresh-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="RestoreWindow" cname="restore-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="MaximizeWindow" cname="maximize-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="ResizeWindow" cname="resize-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
-          <parameter name="p0" type="guint32" />
-          <parameter name="p1" type="guint32" />
+          <parameter type="VteTerminal*" name="terminal" />
+          <parameter type="guint" name="width" />
+          <parameter type="guint" name="height" />
         </parameters>
       </signal>
       <signal name="MoveWindow" cname="move-window" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
-          <parameter name="p0" type="guint32" />
-          <parameter name="p1" type="guint32" />
+          <parameter type="VteTerminal*" name="terminal" />
+          <parameter type="guint" name="x" />
+          <parameter type="guint" name="y" />
         </parameters>
       </signal>
       <signal name="StatusLineChanged" cname="status-line-changed" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="IncreaseFontSize" cname="increase-font-size" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="DecreaseFontSize" cname="decrease-font-size" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="TextModified" cname="text-modified" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="TextInserted" cname="text-inserted" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="TextDeleted" cname="text-deleted" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
+          <parameter type="VteTerminal*" name="terminal" />
         </parameters>
       </signal>
       <signal name="TextScrolled" cname="text-scrolled" when="LAST">
         <return-type type="void" />
         <parameters>
-          <parameter name="inst" type="VteTerminal*" />
-          <parameter name="p0" type="gint32" />
+          <parameter type="VteTerminal*" name="terminal" />
+          <parameter type="gint" name="delta" />
         </parameters>
       </signal>
       <method name="CopyClipboard" cname="vte_terminal_copy_clipboard">
@@ -303,6 +328,13 @@
       <method name="FeedChild" cname="vte_terminal_feed_child">
         <return-type type="void" />
         <parameters>
+          <parameter type="const-char*" name="text" />
+          <parameter type="glong" name="length" />
+        </parameters>
+      </method>
+      <method name="FeedChildBinary" cname="vte_terminal_feed_child_binary">
+        <return-type type="void" />
+        <parameters>
           <parameter type="const-char*" name="data" />
           <parameter type="glong" name="length" />
         </parameters>
@@ -312,6 +344,16 @@
         <parameters>
           <parameter type="const-char*" name="command" />
           <parameter type="char**" name="argv" />
+          <parameter type="char**" name="envv" />
+          <parameter type="const-char*" name="directory" />
+          <parameter type="gboolean" name="lastlog" />
+          <parameter type="gboolean" name="utmp" />
+          <parameter type="gboolean" name="wtmp" />
+        </parameters>
+      </method>
+      <method name="Forkpty" cname="vte_terminal_forkpty">
+        <return-type type="pid_t" />
+        <parameters>
           <parameter type="char**" name="envv" />
           <parameter type="const-char*" name="directory" />
           <parameter type="gboolean" name="lastlog" />
@@ -350,6 +392,9 @@
           <parameter type="glong*" name="row" />
         </parameters>
       </method>
+      <method name="GetDefaultEmulation" cname="vte_terminal_get_default_emulation">
+        <return-type type="const-char*" />
+      </method>
       <method name="GetEmulation" cname="vte_terminal_get_emulation">
         <return-type type="const-char*" />
       </method>
@@ -382,6 +427,14 @@
         <return-type type="const-char*" />
       </method>
       <method name="GetText" cname="vte_terminal_get_text">
+        <return-type type="char*" />
+        <parameters>
+          <parameter type="gboolean(*is_selected)(VteTerminal*" name="terminal," />
+          <parameter type="gpointer" name="data" />
+          <parameter type="GArray*" name="attributes" />
+        </parameters>
+      </method>
+      <method name="GetTextIncludeTrailingSpaces" cname="vte_terminal_get_text_include_trailing_spaces">
         <return-type type="char*" />
         <parameters>
           <parameter type="gboolean(*is_selected)(VteTerminal*" name="terminal," />
@@ -536,6 +589,12 @@
           <parameter type="const-GdkColor*" name="bold" />
         </parameters>
       </method>
+      <method name="SetColorCursor" cname="vte_terminal_set_color_cursor">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-GdkColor*" name="cursor_background" />
+        </parameters>
+      </method>
       <method name="SetColorDim" cname="vte_terminal_set_color_dim">
         <return-type type="void" />
         <parameters>
@@ -546,6 +605,12 @@
         <return-type type="void" />
         <parameters>
           <parameter type="const-GdkColor*" name="foreground" />
+        </parameters>
+      </method>
+      <method name="SetColorHighlight" cname="vte_terminal_set_color_highlight">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-GdkColor*" name="highlight_background" />
         </parameters>
       </method>
       <method name="SetColors" cname="vte_terminal_set_colors">
@@ -596,10 +661,36 @@
           <parameter type="const-char*" name="name" />
         </parameters>
       </method>
+      <method name="SetFontFromStringFull" cname="vte_terminal_set_font_from_string_full">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="name" />
+          <parameter type="VteTerminalAntiAlias" name="antialias" />
+        </parameters>
+      </method>
+      <method name="SetFontFull" cname="vte_terminal_set_font_full">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-PangoFontDescription*" name="font_desc" />
+          <parameter type="VteTerminalAntiAlias" name="antialias" />
+        </parameters>
+      </method>
       <method name="SetMouseAutohide" cname="vte_terminal_set_mouse_autohide">
         <return-type type="void" />
         <parameters>
           <parameter type="gboolean" name="setting" />
+        </parameters>
+      </method>
+      <method name="SetOpacity" cname="vte_terminal_set_opacity">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="guint16" name="opacity" />
+        </parameters>
+      </method>
+      <method name="SetPty" cname="vte_terminal_set_pty">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="int" name="pty_master" />
         </parameters>
       </method>
       <method name="SetScrollBackground" cname="vte_terminal_set_scroll_background">
@@ -681,6 +772,10 @@
       <field name="Delta" cname="delta" type="glong" />
       <field name="Length" cname="length" type="glong" />
       <field name="Max" cname="max" type="glong" />
+    </struct>
+    <struct name="Tree" cname="VteTree">
+      <field name="Tree" cname="tree" type="GTree*" />
+      <field name="Array" cname="array" array_len="VTE_TREE_ARRAY_SIZE" type="gpointer" />
     </struct>
     <struct name="Conv" cname="VteConv" opaque="true" />
   </namespace>

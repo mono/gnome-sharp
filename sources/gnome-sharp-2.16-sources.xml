@@ -107,7 +107,9 @@
   <api filename="../vte/vte-api.raw">
     <library name="vte">
       <namespace name="Vte">
-        <dir>vte-0.11.10/src</dir>
+        <directory path="vte-0.13.4/src">
+          <exclude>vteseq-table.h</exclude>
+        </directory>
       </namespace>
     </library>
   </api>
