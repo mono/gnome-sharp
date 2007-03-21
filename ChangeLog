@@ -1,3 +1,8 @@
+2007-03-21  Stephane Delcroix  <stephane@delcroix.org>
+
+	* gconf/GConf/Value.cs: Allow the storage of empty lists in
+	gconf-sharp.
+
 2006-08-21  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-2.16 : tag and bump version to 2.16.0.

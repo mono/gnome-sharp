@@ -129,6 +129,17 @@ namespace GConf
 			GLib.SList list = new GLib.SList (IntPtr.Zero);
 			GC.SuppressFinalize (list);
 
+			if (data.Count == 0) {
+				if (data is string [])
+					listType = ValueType.String;
+				else if (data is int [])
+					listType = ValueType.Int;
+				else if (data is double [])
+					listType = ValueType.Float;
+				else if (data is bool [])
+					listType = ValueType.Bool;
+			}
+
 			foreach (object o in arr) {
 				ValueType type = LookupType (o);
 				if (listType == ValueType.Invalid)
