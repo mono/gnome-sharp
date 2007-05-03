@@ -1,3 +1,8 @@
+2007-05-03  Wade Berrier  <wberrier@novell.com>
+
+	* gconf/tools/gconfsharp2-schemagen.in:
+	Revert unportable 'relocatable' wrapper using which (doesn't work with symlinks)
+
 2007-03-21  Stephane Delcroix  <stephane@delcroix.org>
 
 	* gconf/GConf/Value.cs: Allow the storage of empty lists in
