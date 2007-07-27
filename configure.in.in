@@ -302,5 +302,8 @@ echo "      NOTE: if any of the above say 'no' you may install the"
 echo "            corresponding development packages for them, rerun"
 echo "            autogen.sh to include them in the build."
 echo ""
+echo "            gnome-sharp.dll requires libgnomecanvas, libgnome,"
+echo "            libgnomeui, libgnomeprint, libgnomeprintui, and"
+echo "            libpanelapplet."
 echo "---"
 

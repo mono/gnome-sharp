@@ -1,3 +1,8 @@
+2007-07-27  Mike Kestner  <mkestner@novell.com>
+
+	* configure.in.in : add blurb about the gnome-sharp.dll requirements
+	since it seems to be a FAQ for people trying to build from sources.
+
 2007-07-03  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-generic : use automake --foreign to keep automake-1.10 from
