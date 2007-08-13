@@ -21,6 +21,9 @@
 
 		public static CanvasPathDef NewFromBpath (Art.Bpath bpath)
 		{
-                        return new CanvasPathDef (gnome_canvas_path_def_new_from_bpath (ref bpath));
+                        IntPtr native_bpath = GLib.Marshaller.StructureToPtrAlloc (bpath);
+                        CanvasPathDef result = new CanvasPathDef (gnome_canvas_path_def_new_from_bpath (native_bpath));
+			GLib.Marshaller.Free (native_bpath);
+			return result;
 		}
 

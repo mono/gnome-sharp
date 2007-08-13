@@ -1,3 +1,7 @@
+2007-08-13  Mike Kestner  <mkestner@novell.com>
+
+	* gnome/CanvasPathDef.custom : adapt to generated pinvoke sig change.
+
 2007-07-27  Mike Kestner  <mkestner@novell.com>
 
 	* configure.in.in : add blurb about the gnome-sharp.dll requirements
