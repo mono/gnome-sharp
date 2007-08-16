@@ -11,6 +11,7 @@
   <attr path="/api/namespace/object[@cname='VteTerminal']/method[@name='SetColors']/*/*[@name='palette']" name="array">1</attr>
   <attr path="/api/namespace/object[@cname='VteTerminal']/signal[@name='CharSizeChanged']/*/*[@name='char_width']" name="name">p0</attr>
   <attr path="/api/namespace/object[@cname='VteTerminal']/signal[@name='CharSizeChanged']/*/*[@name='char_height']" name="name">p1</attr>
+  <attr path="/api/namespace/object[@cname='VteTerminal']/signal[@name='Commit']/*/*[@name='text']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/object[@cname='VteTerminal']/signal[@name='Commit']/*/*[@name='text']" name="name">p0</attr>
   <attr path="/api/namespace/object[@cname='VteTerminal']/signal[@name='Commit']/*/*[@name='size']" name="name">p1</attr>
   <attr path="/api/namespace/object[@cname='VteTerminal']/signal[@name='MoveWindow']/*/*[@name='x']" name="name">p0</attr>

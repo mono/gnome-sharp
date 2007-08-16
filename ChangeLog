@@ -1,3 +1,8 @@
+2007-08-16  Mike Kestner  <mkestner@novell.com>
+
+	* vte/Vte.metadata : rule from Peter Johanson to mark a string
+	const.
+
 2007-08-13  Mike Kestner  <mkestner@novell.com>
 
 	* gnome/CanvasPathDef.custom : adapt to generated pinvoke sig change.
