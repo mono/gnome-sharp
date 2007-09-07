@@ -1,3 +1,7 @@
+2007-09-07  Mike Kestner  <mkestner@novell.com>
+
+	* AssembyInfo.cs.in : add [IgnoreClassInitializers]
+
 2007-08-16  Mike Kestner  <mkestner@novell.com>
 
 	* vte/Vte.metadata : rule from Peter Johanson to mark a string
