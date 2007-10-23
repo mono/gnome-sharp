@@ -1,0 +1,9 @@
+Before beginning work on something, please post your intentions to the 
+mailing list (gtk-sharp-list@ximian.com).  Duplication of effort just gets
+folks cranky in general.  
+
+Prior to checking anything into svn, please send a patch to the mailing list
+for approval.  Any patches should be submitted in diff -u format.  Also, it is 
+assumed that the submitter has verified that the patch does not break the 
+build, and hopefully that it doesn't break runtime.
+

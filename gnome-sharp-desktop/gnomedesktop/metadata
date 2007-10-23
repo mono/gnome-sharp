@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<metadata>
+  <attr path="/api/namespace/object" name="disable_gtype_ctor">1</attr>
+</metadata>

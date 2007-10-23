@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<api>
+  <!--
+
+        This file was automatically generated.
+        Please DO NOT MODIFY THIS FILE, modify .metadata files instead.
+
+-->
+  <namespace name="Gnome" library="gnome-desktop-2">
+    <enum name="DesktopItemError" cname="GnomeDesktopItemError" type="enum">
+      <member cname="GNOME_DESKTOP_ITEM_ERROR_NO_FILENAME" name="NoFilename" />
+      <member cname="GNOME_DESKTOP_ITEM_ERROR_UNKNOWN_ENCODING" name="UnknownEncoding" />
+      <member cname="GNOME_DESKTOP_ITEM_ERROR_CANNOT_OPEN" name="CannotOpen" />
+      <member cname="GNOME_DESKTOP_ITEM_ERROR_NO_EXEC_STRING" name="NoExecString" />
+      <member cname="GNOME_DESKTOP_ITEM_ERROR_BAD_EXEC_STRING" name="BadExecString" />
+      <member cname="GNOME_DESKTOP_ITEM_ERROR_NO_URL" name="NoUrl" />
+      <member cname="GNOME_DESKTOP_ITEM_ERROR_NOT_LAUNCHABLE" name="NotLaunchable" />
+      <member cname="GNOME_DESKTOP_ITEM_ERROR_INVALID_TYPE" name="InvalidType" />
+    </enum>
+    <enum name="DesktopItemIconFlags" cname="GnomeDesktopItemIconFlags" type="flags">
+      <member cname="GNOME_DESKTOP_ITEM_ICON_NO_KDE" name="Kde" value="1 &lt;&lt; 0" />
+    </enum>
+    <enum name="DesktopItemLaunchFlags" cname="GnomeDesktopItemLaunchFlags" type="flags">
+      <member cname="GNOME_DESKTOP_ITEM_LAUNCH_ONLY_ONE" name="OnlyOne" value="1 &lt;&lt; 0" />
+      <member cname="GNOME_DESKTOP_ITEM_LAUNCH_USE_CURRENT_DIR" name="UseCurrentDir" value="1 &lt;&lt; 1" />
+      <member cname="GNOME_DESKTOP_ITEM_LAUNCH_APPEND_URIS" name="AppendUris" value="1 &lt;&lt; 2" />
+      <member cname="GNOME_DESKTOP_ITEM_LAUNCH_APPEND_PATHS" name="AppendPaths" value="1 &lt;&lt; 3" />
+      <member cname="GNOME_DESKTOP_ITEM_LAUNCH_DO_NOT_REAP_CHILD" name="DoNotReapChild" value="1 &lt;&lt; 4" />
+    </enum>
+    <enum name="DesktopItemLoadFlags" cname="GnomeDesktopItemLoadFlags" type="flags">
+      <member cname="GNOME_DESKTOP_ITEM_LOAD_ONLY_IF_EXISTS" name="OnlyIfExists" value="1 &lt;&lt; 0" />
+      <member cname="GNOME_DESKTOP_ITEM_LOAD_NO_TRANSLATIONS" name="NoTranslations" value="1 &lt;&lt; 1" />
+    </enum>
+    <enum name="DesktopItemStatus" cname="GnomeDesktopItemStatus" type="enum">
+      <member cname="GNOME_DESKTOP_ITEM_UNCHANGED" name="Unchanged" />
+      <member cname="GNOME_DESKTOP_ITEM_CHANGED" name="Changed" value="1" />
+      <member cname="GNOME_DESKTOP_ITEM_DISAPPEARED" name="Disappeared" value="2" />
+    </enum>
+    <enum name="DesktopItemType" cname="GnomeDesktopItemType" type="enum">
+      <member cname="GNOME_DESKTOP_ITEM_TYPE_NULL" name="Null" value="0 " />
+      <member cname="GNOME_DESKTOP_ITEM_TYPE_APPLICATION" name="Application" />
+      <member cname="GNOME_DESKTOP_ITEM_TYPE_LINK" name="Link" />
+      <member cname="GNOME_DESKTOP_ITEM_TYPE_FSDEVICE" name="Fsdevice" />
+      <member cname="GNOME_DESKTOP_ITEM_TYPE_MIME_TYPE" name="MimeType" />
+      <member cname="GNOME_DESKTOP_ITEM_TYPE_DIRECTORY" name="Directory" />
+      <member cname="GNOME_DESKTOP_ITEM_TYPE_SERVICE" name="Service" />
+      <member cname="GNOME_DESKTOP_ITEM_TYPE_SERVICE_TYPE" name="ServiceType" />
+    </enum>
+    <boxed name="DesktopItem" cname="GnomeDesktopItem" opaque="true">
+      <method name="AttrExists" cname="gnome_desktop_item_attr_exists">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+        </parameters>
+      </method>
+      <method name="ClearLocalestring" cname="gnome_desktop_item_clear_localestring">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+        </parameters>
+      </method>
+      <method name="ClearSection" cname="gnome_desktop_item_clear_section">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="section" />
+        </parameters>
+      </method>
+      <method name="Copy" cname="gnome_desktop_item_copy">
+        <return-type type="GnomeDesktopItem*" owned="true" />
+      </method>
+      <method name="DropUriList" cname="gnome_desktop_item_drop_uri_list">
+        <return-type type="int" />
+        <parameters>
+          <parameter type="const-char*" name="uri_list" />
+          <parameter type="GnomeDesktopItemLaunchFlags" name="flags" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </method>
+      <method name="DropUriListWithEnv" cname="gnome_desktop_item_drop_uri_list_with_env">
+        <return-type type="int" />
+        <parameters>
+          <parameter type="const-char*" name="uri_list" />
+          <parameter type="GnomeDesktopItemLaunchFlags" name="flags" />
+          <parameter type="char**" name="envp" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </method>
+      <method name="ErrorQuark" cname="gnome_desktop_item_error_quark" shared="true">
+        <return-type type="GQuark" />
+      </method>
+      <method name="Exists" cname="gnome_desktop_item_exists">
+        <return-type type="gboolean" />
+      </method>
+      <method name="FindIcon" cname="gnome_desktop_item_find_icon" shared="true">
+        <return-type type="char*" />
+        <parameters>
+          <parameter type="GtkIconTheme*" name="icon_theme" />
+          <parameter type="const-char*" name="icon" />
+          <parameter type="int" name="desired_size" />
+          <parameter type="int" name="flags" />
+        </parameters>
+      </method>
+      <method name="GetAttrLocale" cname="gnome_desktop_item_get_attr_locale">
+        <return-type type="const-char*" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+        </parameters>
+      </method>
+      <method name="GetBoolean" cname="gnome_desktop_item_get_boolean">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+        </parameters>
+      </method>
+      <method name="GetEntryType" cname="gnome_desktop_item_get_entry_type">
+        <return-type type="GnomeDesktopItemType" />
+      </method>
+      <method name="GetFileStatus" cname="gnome_desktop_item_get_file_status">
+        <return-type type="GnomeDesktopItemStatus" />
+      </method>
+      <method name="GetIcon" cname="gnome_desktop_item_get_icon">
+        <return-type type="char*" />
+        <parameters>
+          <parameter type="GtkIconTheme*" name="icon_theme" />
+        </parameters>
+      </method>
+      <method name="GetLanguages" cname="gnome_desktop_item_get_languages">
+        <return-type type="GList*" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+        </parameters>
+      </method>
+      <method name="GetLocalestring" cname="gnome_desktop_item_get_localestring">
+        <return-type type="const-char*" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+        </parameters>
+      </method>
+      <method name="GetLocalestringLang" cname="gnome_desktop_item_get_localestring_lang">
+        <return-type type="const-char*" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+          <parameter type="const-char*" name="language" />
+        </parameters>
+      </method>
+      <method name="GetLocation" cname="gnome_desktop_item_get_location">
+        <return-type type="const-char*" />
+      </method>
+      <method name="GetString" cname="gnome_desktop_item_get_string">
+        <return-type type="const-char*" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+        </parameters>
+      </method>
+      <method name="GetStrings" cname="gnome_desktop_item_get_strings">
+        <return-type type="char**" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+        </parameters>
+      </method>
+      <method name="GetType" cname="gnome_desktop_item_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <method name="Launch" cname="gnome_desktop_item_launch">
+        <return-type type="int" />
+        <parameters>
+          <parameter type="GList*" name="file_list" />
+          <parameter type="GnomeDesktopItemLaunchFlags" name="flags" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </method>
+      <method name="LaunchOnScreen" cname="gnome_desktop_item_launch_on_screen">
+        <return-type type="int" />
+        <parameters>
+          <parameter type="GList*" name="file_list" />
+          <parameter type="GnomeDesktopItemLaunchFlags" name="flags" />
+          <parameter type="GdkScreen*" name="screen" />
+          <parameter type="int" name="workspace" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </method>
+      <method name="LaunchWithEnv" cname="gnome_desktop_item_launch_with_env">
+        <return-type type="int" />
+        <parameters>
+          <parameter type="GList*" name="file_list" />
+          <parameter type="GnomeDesktopItemLaunchFlags" name="flags" />
+          <parameter type="char**" name="envp" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </method>
+      <constructor cname="gnome_desktop_item_new" />
+      <constructor cname="gnome_desktop_item_new_from_basename">
+        <parameters>
+          <parameter type="const-char*" name="basename" />
+          <parameter type="GnomeDesktopItemLoadFlags" name="flags" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </constructor>
+      <constructor cname="gnome_desktop_item_new_from_file">
+        <parameters>
+          <parameter type="const-char*" name="file" />
+          <parameter type="GnomeDesktopItemLoadFlags" name="flags" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </constructor>
+      <constructor cname="gnome_desktop_item_new_from_string">
+        <parameters>
+          <parameter type="const-char*" name="uri" />
+          <parameter type="const-char*" name="string" />
+          <parameter type="gssize" name="length" />
+          <parameter type="GnomeDesktopItemLoadFlags" name="flags" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </constructor>
+      <constructor cname="gnome_desktop_item_new_from_uri">
+        <parameters>
+          <parameter type="const-char*" name="uri" />
+          <parameter type="GnomeDesktopItemLoadFlags" name="flags" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </constructor>
+      <method name="Ref" cname="gnome_desktop_item_ref">
+        <return-type type="GnomeDesktopItem*" />
+      </method>
+      <method name="Save" cname="gnome_desktop_item_save">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="const-char*" name="under" />
+          <parameter type="gboolean" name="force" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </method>
+      <method name="SetBoolean" cname="gnome_desktop_item_set_boolean">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+          <parameter type="gboolean" name="value" />
+        </parameters>
+      </method>
+      <method name="SetEntryType" cname="gnome_desktop_item_set_entry_type">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GnomeDesktopItemType" name="type" />
+        </parameters>
+      </method>
+      <method name="SetLaunchTime" cname="gnome_desktop_item_set_launch_time">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="guint32" name="timestamp" />
+        </parameters>
+      </method>
+      <method name="SetLocalestring" cname="gnome_desktop_item_set_localestring">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+          <parameter type="const-char*" name="value" />
+        </parameters>
+      </method>
+      <method name="SetLocalestringLang" cname="gnome_desktop_item_set_localestring_lang">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+          <parameter type="const-char*" name="language" />
+          <parameter type="const-char*" name="value" />
+        </parameters>
+      </method>
+      <method name="SetLocation" cname="gnome_desktop_item_set_location">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="location" />
+        </parameters>
+      </method>
+      <method name="SetLocationFile" cname="gnome_desktop_item_set_location_file">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="file" />
+        </parameters>
+      </method>
+      <method name="SetString" cname="gnome_desktop_item_set_string">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+          <parameter type="const-char*" name="value" />
+        </parameters>
+      </method>
+      <method name="SetStrings" cname="gnome_desktop_item_set_strings">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="attr" />
+          <parameter type="char**" name="strings" />
+        </parameters>
+      </method>
+      <method name="Unref" cname="gnome_desktop_item_unref">
+        <return-type type="void" />
+      </method>
+    </boxed>
+  </namespace>
+</api>

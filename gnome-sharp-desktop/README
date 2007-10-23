@@ -1,0 +1,58 @@
+The Gtk#/Gnome# website can be found at: http://mono-project.com/GtkSharp/
+
+GnomeDesktop# is a .NET language binding for assorted GNOME libraries from the
+desktop release.  GnomeDesktop# is free software, licensed under the GNU LGPL.
+
+Building & Installing GnomeDesktop#:
+---------------------------
+
+    The build is the traditional:
+
+        ./configure
+        make
+        make install
+
+Discussion & Support:
+---------------------
+
+    A mailing list for GnomeDesktop# discussion is available.
+
+    You can subscribe to the mailing list by visiting:
+
+        http://lists.ximian.com/mailman/listinfo/gtk-sharp-list
+
+    And following the instructions (on that page) to subscribe.
+    Messages are posted on this mailing list by sending them to:
+
+        gtk-sharp-list@ximian.com
+
+    (The mailing list requires you to subscribe in order to post
+    messages.)
+
+    An archive of this mailing list can be found at:
+
+        http://lists.ximian.com/archives/public/gtk-sharp-list/
+
+    Also, people can get help with and discuss Gtk# on IRC via the
+    #mono channel on the irc.gnome.org IRC server.
+
+    People looking for general help with C# should visit the
+    #c# channel on irc.freenode.net IRC server.
+
+
+Developers:
+-----------
+
+    For developers wishing to "get started" with Gnome#, they are encouraged
+    to read the Mono Hand Book:
+
+        http://www.mono-project.com/Monkeyguide
+
+Hackers:
+--------
+
+    For those who wish to help with the development of Gnome#, they should
+    read the file named: HACKING.
+
+    Also, anyone wishing to hack Gnome# is encouraged to join the Gtk#
+    mailing list.  And to visit the #mono IRC channel (on irc.gnome.org).

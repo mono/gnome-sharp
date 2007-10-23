@@ -1,0 +1,46 @@
+<gapi-parser-input>
+  <api filename="../gnomedesktop/gnomedesktop-api-2.20.raw">
+    <library name="gnome-desktop-2">
+      <namespace name="Gnome">
+        <directory path="gnome-desktop-2.20.0/libgnome-desktop" />
+        <directory path="gnome-desktop-2.20.0/libgnome-desktop/libgnome" />
+      </namespace>
+    </library>
+  </api>
+  <api filename="../nautilusburn/nautilusburn-api-2.20.raw">
+    <library name="nautilus-burn">
+      <namespace name="NautilusBurn">
+        <directory path="nautilus-cd-burner-2.20.0/src">
+          <exclude>bcs-test.c</exclude>
+          <exclude>burn-extension.c</exclude>
+          <exclude>list_cddrives.c</exclude>
+          <exclude>make-iso.c</exclude>
+          <exclude>make-iso.h</exclude>
+          <exclude>mapping-daemon.c</exclude>
+          <exclude>mapping-daemon.h</exclude>
+          <exclude>mapping-method.c</exclude>
+          <exclude>mapping-method.h</exclude>
+          <exclude>mapping-protocol.c</exclude>
+          <exclude>mapping-protocol.h</exclude>
+          <exclude>mkdtemp.c</exclude>
+          <exclude>mkdtemp.h</exclude>
+          <exclude>nautilus-cd-burner.c</exclude>
+          <exclude>nautilus-cd-burner.h</exclude>
+          <exclude>nautilus-file-operations-progress-icons.h</exclude>
+          <exclude>ncb-operation.c</exclude>
+          <exclude>ncb-operation.h</exclude>
+          <exclude>ncb-progress-dialog.c</exclude>
+          <exclude>ncb-progress-dialog.h</exclude>
+          <exclude>ncb-rename-dialog.c</exclude>
+          <exclude>ncb-rename-dialog.h</exclude>
+          <exclude>ncb-selection-dialog.c</exclude>
+          <exclude>ncb-selection-dialog.h</exclude>
+          <exclude>ncb-selection.c</exclude>
+          <exclude>ncb-selection.h</exclude>
+          <exclude>test_blank.c</exclude>
+          <exclude>test-monitor.c</exclude>
+	</directory>
+      </namespace>
+    </library>
+  </api>
+</gapi-parser-input>
