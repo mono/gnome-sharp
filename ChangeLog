@@ -1,3 +1,8 @@
+2007-12-04  Mike Kestner  <mkestner@novell.com>
+
+	* gconf/GConf/Makefile.am: remove GNOME condition.  It's only needed
+	on the peditor build.
+
 2007-10-16  Mike Kestner  <mkestner@novell.com>
 
 	* gnome/CanvasItem.custom: marshal GType as IntPtr.
