@@ -30,7 +30,7 @@ sources = 			\
 	NotifyWrapper.cs 	\
 	Value.cs
 
-build_sources = $(addprefix $(srcdir)/, $(sources)) ../../AssemblyInfo.cs
+build_sources = $(addprefix $(srcdir)/, $(sources)) $(top_builddir)/AssemblyInfo.cs
 
 if PLATFORM_WIN32
 GAPI_CDECL_INSERT=$(top_srcdir)/gapi-cdecl-insert --keyfile=gtk-sharp.snk $(ASSEMBLY)

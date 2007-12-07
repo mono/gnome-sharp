@@ -1,3 +1,9 @@
+2007-12-07  Mike Kestner  <mkestner@novell.com>
+
+	* gconf/GConf/Makefile.am: 
+	* gconf/GConf.PropertyEditors/Makefile.am: 
+	use top_builddir instead of .. to avoid win32 build issues.
+
 2007-12-04  Mike Kestner  <mkestner@novell.com>
 
 	* gconf/GConf/Makefile.am: remove GNOME condition.  It's only needed

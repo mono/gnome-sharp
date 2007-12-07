@@ -19,7 +19,7 @@ EXTRA_DIST =				\
 references = 			\
 	$(GTKSHARP_LIBS)	\
 	$(GLADESHARP_LIBS)	\
-	/r:../../art/art-sharp.dll /r:../../gnome/gnome-sharp.dll /r:../GConf/gconf-sharp.dll
+	/r:$(top_builddir)/art/art-sharp.dll /r:$(top_builddir)/gnome/gnome-sharp.dll /r:$(top_builddir)/gconf/GConf/gconf-sharp.dll
 
 sources = 				\
 	PropertyEditor.cs 		\
@@ -33,7 +33,7 @@ sources = 				\
 	PropertyEditorToggleButton.cs 	\
 	EditorShell.cs
 
-build_sources = $(addprefix $(srcdir)/, $(sources)) ../../AssemblyInfo.cs
+build_sources = $(addprefix $(srcdir)/, $(sources)) $(top_builddir)/AssemblyInfo.cs
 
 gtk-sharp.snk: $(top_srcdir)/gtk-sharp.snk
 	cp $(top_srcdir)/gtk-sharp.snk .
