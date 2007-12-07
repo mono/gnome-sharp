@@ -30,7 +30,7 @@ sources = 			\
 	NotifyWrapper.cs 	\
 	Value.cs
 
-build_sources = $(addprefix $(srcdir)/, $(sources)) $(top_builddir)/AssemblyInfo.cs
+build_sources = $(addprefix $(srcdir)/, $(sources))
 
 if PLATFORM_WIN32
 GAPI_CDECL_INSERT=$(top_srcdir)/gapi-cdecl-insert --keyfile=gtk-sharp.snk $(ASSEMBLY)
@@ -41,9 +41,12 @@ endif
 gtk-sharp.snk: $(top_srcdir)/gtk-sharp.snk
 	cp $(top_srcdir)/gtk-sharp.snk .
 
-$(ASSEMBLY): $(build_sources) gtk-sharp.snk
+AssemblyInfo.cs: $(top_builddir)/AssemblyInfo.cs
+	cp $(top_builddir)/AssemblyInfo.cs .
+
+$(ASSEMBLY): $(build_sources) gtk-sharp.snk AssemblyInfo.cs
 	@rm -f $(ASSEMBLY).mdb
-	$(CSC) $(CSFLAGS) /out:$(ASSEMBLY) /target:library $(references) $(build_sources)
+	$(CSC) $(CSFLAGS) /out:$(ASSEMBLY) /target:library $(references) $(build_sources) AssemblyInfo.cs
 	$(GAPI_CDECL_INSERT)
 
 $(POLICY_ASSEMBLIES): $(top_builddir)/policy.config gtk-sharp.snk
