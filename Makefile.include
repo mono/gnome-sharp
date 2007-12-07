@@ -1,24 +1,24 @@
 SNK = gtk-sharp.snk
-API = $(pkg)-api.xml
-RAW_API = $(pkg)-api.raw
+API = $(pkg:=-api.xml)
+RAW_API = $(pkg:=-api.raw)
 
-ASSEMBLY_NAME = $(pkg)-sharp
-ASSEMBLY = $(ASSEMBLY_NAME).dll
+ASSEMBLY_NAME = $(pkg:=-sharp)
+ASSEMBLY = $(ASSEMBLY_NAME:=.dll)
 
-TARGET = $(pkg:=-sharp.dll) $(pkg:=-sharp.dll.config) $(POLICY_ASSEMBLIES)
+TARGET = $(ASSEMBLY) $(ASSEMBLY:=.config) $(POLICY_ASSEMBLIES)
 noinst_DATA = $(TARGET)
-TARGET_API = $(pkg:=-api.xml)
+TARGET_API = $(API)
 gapidir = $(datadir)/gapi-2.0
 gapi_DATA = $(TARGET_API)
-CLEANFILES = $(ASSEMBLY) $(ASSEMBLY).mdb $(POLICY_ASSEMBLIES) generated-stamp generated/*.cs $(API) glue/generated.c $(SNK) AssemblyInfo.cs $(POLICY_CONFIGS)
+CLEANFILES = $(ASSEMBLY) $(ASSEMBLY:=.mdb) $(POLICY_ASSEMBLIES) generated-stamp generated/*.cs $(API) glue/generated.c $(SNK) AssemblyInfo.cs $(POLICY_CONFIGS)
 DISTCLEANFILES = $(ASSEMBLY).config
 
-POLICY_ASSEMBLIES = $(addsuffix .$(ASSEMBLY), $(addprefix policy., $(POLICY_VERSIONS)))
-POLICY_CONFIGS = $(addsuffix .config, $(addprefix policy., $(POLICY_VERSIONS)))
+POLICY_ASSEMBLIES = $(filter %.dll, $(patsubst %, policy.%.$(ASSEMBLY), $(POLICY_VERSIONS)))
+POLICY_CONFIGS = $(patsubst %, policy.%.config, $(POLICY_VERSIONS))
 
-EXTRA_DIST = $(RAW_API) $(SYMBOLS) $(ASSEMBLY).config.in $(METADATA) $(customs) $(sources) $(add_dist)
+EXTRA_DIST = $(RAW_API) $(SYMBOLS) $(ASSEMBLY:=.config.in) $(METADATA) $(customs) $(sources) $(add_dist)
 
-build_symbols = $(addprefix --symbols=$(srcdir)/, $(SYMBOLS))
+build_symbols = $(patsubst %, --symbols=$(srcdir)/%, $(SYMBOLS))
 
 $(API): $(METADATA) $(RAW_API) $(SYMBOLS)
 	cp $(srcdir)/$(RAW_API) $(API)
@@ -28,8 +28,8 @@ $(API): $(METADATA) $(RAW_API) $(SYMBOLS)
 		$(GAPI_FIXUP) --api=$(API) --metadata=$(srcdir)/$(METADATA) $(build_symbols); \
 	fi
 
-build_customs = $(addprefix $(srcdir)/, $(customs))
-api_includes = $(GTKSHARP_CFLAGS) $(addprefix -I:, $(INCLUDE_API))
+build_customs = $(patsubst %, $(srcdir)/%, $(customs))
+api_includes = $(GTKSHARP_CFLAGS) $(patsubst %, -I:%, $(INCLUDE_API))
 
 generated-stamp: $(API) $(INCLUDE_API) $(build_customs)
 	rm -f generated/* &&	\
@@ -53,8 +53,8 @@ $(POLICY_ASSEMBLIES): $(top_builddir)/policy.config $(SNK)
 	  $(AL) -link:policy.$$i.config -out:policy.$$i.$(ASSEMBLY) -keyfile:$(SNK);	\
 	done
 
-build_sources = $(addprefix $(srcdir)/, $(sources)) AssemblyInfo.cs
-build_references = $(GTKSHARP_LIBS) $(addprefix /r:, $(references)) $(MONO_CAIRO_LIBS)
+build_sources = $(patsubst %, $(srcdir)/%, $(sources)) AssemblyInfo.cs
+build_references = $(GTKSHARP_LIBS) $(patsubst %, /r:%, $(references)) $(MONO_CAIRO_LIBS)
 
 if PLATFORM_WIN32
 GAPI_CDECL_INSERT=$(top_srcdir)/gapi-cdecl-insert --keyfile=$(SNK) $(ASSEMBLY)

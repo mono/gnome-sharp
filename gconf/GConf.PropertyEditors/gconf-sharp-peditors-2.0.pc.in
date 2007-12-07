@@ -1,0 +1,10 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+
+Name: GConf.PropertyEditors#
+Description: GConf# Property Editing classes - GConf .NET Binding
+Version: @VERSION@
+Requires: gnome-sharp-2.0 gconf-sharp-2.0
+Libs: -r:${libdir}/mono/@PACKAGE_VERSION@/gconf-sharp-peditors.dll

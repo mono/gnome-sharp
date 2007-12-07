@@ -265,6 +265,7 @@ gconf/GConf/Makefile
 gconf/GConf/gconf-sharp.dll.config
 gconf/GConf/gconf-sharp-2.0.pc
 gconf/GConf.PropertyEditors/Makefile
+gconf/GConf.PropertyEditors/gconf-sharp-peditors-2.0.pc
 gconf/tools/Makefile
 gconf/tools/gconfsharp2-schemagen
 gtkhtml/Makefile

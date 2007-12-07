@@ -1,3 +1,14 @@
+2007-12-07  Mike Kestner  <mkestner@novell.com>
+
+	* Makefile.include: some refinement of the variable mangling.
+	* configure.in.in: expand new pc.in.
+	* gconf/GConf/gconf-sharp-2.0.pc.in: remove gnome-sharp Requires and
+	peditors.dll from the Libs: var.
+	* gconf/GConf.PropertyEditors/Makefile.am: install new pc.
+	* gconf/GConf.PropertyEditors/gconf-sharp-peditors-2.0.pc.in: expose
+	new pc file since this is conditional and the gconf-sharp.dll build 
+	is not.
+ 
 2007-12-07  Wade Berrier  <wberrier@novell.com>
 
 	* gconf/GConf/Makefile.am: Copy AssemblyInfo.cs to the current dir so
