@@ -1,4 +1,4 @@
-SUBDIRS = gconf rsvg gnomevfs 
+SUBDIRS = gconf gnomevfs 
 
 if ENABLE_GNOME
 GNOME_TARGETS=gnome-hello-world.exe canvas-example.exe fifteen.exe print.exe
@@ -16,19 +16,11 @@ GNOMEVFS_TARGETS=
 GNOMEVFS_ASSEMBLY=
 endif
 
-if ENABLE_VTE
-VTE_TARGETS=vte-example.exe
-VTE_ASSEMBLY=../vte/vte-sharp.dll
-else
-VTE_TARGETS=
-VTE_ASSEMBLY=
-endif
-
-TARGETS = $(GNOMEVFS_TARGETS) $(GNOME_TARGETS) $(VTE_TARGETS)
+TARGETS = $(GNOMEVFS_TARGETS) $(GNOME_TARGETS)
 
 DEBUGS = $(addsuffix .mdb, $(TARGETS))
 
-assemblies= $(GNOMEVFS_ASSEMBLY) $(GNOME_ASSEMBLY) $(VTE_ASSEMBLY)
+assemblies= $(GNOMEVFS_ASSEMBLY) $(GNOME_ASSEMBLY)
 references=$(GTKSHARP_LIBS) $(addprefix /r:, $(assemblies))
 
 noinst_SCRIPTS = $(TARGETS)
@@ -46,9 +38,6 @@ fifteen.exe: $(srcdir)/Fifteen.cs $(assemblies)
 print.exe: $(srcdir)/PrintSample.cs $(assemblies)
 	$(CSC)  /out:print.exe $(references) $(srcdir)/PrintSample.cs
 
-vte-example.exe: $(srcdir)/VteTest.cs $(assemblies)
-	$(CSC) /debug /unsafe /out:vte-example.exe $(references) $(srcdir)/VteTest.cs
-
 testvfs.exe: $(srcdir)/TestVfs.cs $(assemblies)
 	$(CSC) /debug /out:testvfs.exe $(references) $(srcdir)/TestVfs.cs
 
@@ -57,5 +46,4 @@ EXTRA_DIST = 				\
 	CanvasExample.cs		\
 	Fifteen.cs			\
 	PrintSample.cs			\
-	VteTest.cs			\
 	TestVfs.cs

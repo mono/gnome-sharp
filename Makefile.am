@@ -1,4 +1,4 @@
-SUBDIRS = sources art gnomevfs gnome gtkhtml gconf rsvg vte sample 
+SUBDIRS = sources art gnomevfs gnome gconf sample 
 
 EXTRA_DIST = 			\
 	gtk-sharp.snk		\
