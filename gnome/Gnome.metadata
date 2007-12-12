@@ -144,6 +144,8 @@
   <attr path="/api/namespace/object[@cname='GnomePrintDialog']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/object[@cname='GnomePrintDialog']/constructor[@cname='gnome_print_dialog_new']/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/object[@cname='GnomePrintDialog']/constructor[@cname='gnome_print_dialog_new']/*/*[@name='flags']" name="type">GnomePrintDialogFlags</attr>
+  <attr path="/api/namespace/object[@cname='GnomePrintFilter']/method[@name='Changed']" name="name">EmitChanged</attr>
+  <attr path="/api/namespace/object[@cname='GnomePrintFilter']/method[@name='Description']" name="name">GetDescription</attr>
   <attr path="/api/namespace/object[@cname='GnomePrintJobPreview']/constructor/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/object[@cname='GnomePrintMeta']/method/*/*[@name='filename']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/object[@cname='GnomePrintTransport']" name="parent">GObject</attr>
@@ -163,6 +165,8 @@
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="owned">true</attr>
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="elements_owned">true</attr>
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Unref']" name="deprecated">1</attr>
+  <attr path="/api/namespace/struct[@cname='graph_t']" name="hidden">1</attr>
+  <attr path="/api/namespace/struct[@cname='pool_t']" name="hidden">1</attr>
   <attr path="/api/namespace/struct[@cname='GnomeModuleRequirement']" name="hidden">1</attr>
   <attr path="/api/namespace/struct[@cname='GnomePrintPaper']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/struct[@cname='GnomeThemeFile']/method[@name='Free']" name="deprecated">1</attr>

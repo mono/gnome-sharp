@@ -1,8 +1,8 @@
 <gapi-parser-input>
-  <api filename="../gnomevfs/gnome-vfs-api-2.16.raw">
+  <api filename="../gnomevfs/gnome-vfs-api-2.20.raw">
     <library name="gnomevfs-2">
       <namespace name="GnomeVFS">
-        <directory path="gnome-vfs-2.15.3/libgnomevfs">
+        <directory path="gnome-vfs-2.20.0/libgnomevfs">
           <exclude>gnome-vfs-file-size.h</exclude>
           <exclude>gnome-vfs-method.h</exclude>
           <exclude>gnome-vfs-transform.h</exclude>
@@ -17,20 +17,20 @@
       </namespace>
     </library>
   </api>
-  <api filename="../gnome/gnome-api-2.16.raw">
+  <api filename="../gnome/gnome-api-2.20.raw">
     <library name="gnome-2">
       <namespace name="Gnome">
-        <dir>libgnome-2.15.1/libgnome</dir>
+        <dir>libgnome-2.20.0/libgnome</dir>
       </namespace>
     </library>
     <library name="gnomecanvas-2">
       <namespace name="Gnome">
-        <dir>libgnomecanvas-2.14.0/libgnomecanvas</dir>
+        <dir>libgnomecanvas-2.20.0/libgnomecanvas</dir>
       </namespace>
     </library>
     <library name="gnomeui-2">
       <namespace name="Gnome">
-        <directory path="libgnomeui-2.15.2/libgnomeui">
+        <directory path="libgnomeui-2.20.0/libgnomeui">
 	  <!-- These were ignored in gtk# 1.0 due to a parser bug, but contain only deprecated methods -->
 	  <exclude>gnome-app-util.h</exclude>
 	  <exclude>gnome-dialog.h</exclude>
@@ -47,7 +47,7 @@
     </library>
     <library name="gnomeprint-2-2">
       <namespace name="Gnome">
-        <directory path="libgnomeprint-2.10.0/libgnomeprint">
+        <directory path="libgnomeprint-2.18.2/libgnomeprint">
 	  <exclude>gnome-font-family.h</exclude>
 	  <exclude>gnome-fontmap.h</exclude>
 	  <exclude>gnome-print-encode.h</exclude>
@@ -67,7 +67,7 @@
     </library>
     <library name="gnomeprintui-2-2">
       <namespace name="Gnome">
-        <directory path="libgnomeprintui-2.10.0.1/libgnomeprintui">
+        <directory path="libgnomeprintui-2.18.1/libgnomeprintui">
 	  <exclude>gnome-canvas-hacktext.h</exclude>
 	  <exclude>gnome-print-copies.h</exclude>
 	  <exclude>gnome-print-i18n.h</exclude>
@@ -79,37 +79,14 @@
     </library>
     <library name="panel-applet-2">
       <namespace name="Gnome">
-        <dir>gnome-panel-2.14.2/libpanel-applet</dir>
-      </namespace>
-    </library>
-  </api>
-  <api filename="../gtkhtml/gtkhtml-api.raw">
-    <library name="gtkhtml-3.0">
-      <namespace name="Gtk">
-        <dir>gtkhtml-3.0.10/src</dir>
+        <dir>gnome-panel-2.20.0.1/libpanel-applet</dir>
       </namespace>
     </library>
   </api>
   <api filename="../art/art-api.raw">
     <library name="art_lgpl">
       <namespace name="Art">
-        <dir>libart_lgpl-2.3.16</dir>
-      </namespace>
-    </library>
-  </api>
-  <api filename="../rsvg/rsvg-api.raw">
-    <library name="rsvg-2">
-      <namespace name="Rsvg">
-        <dir>librsvg-2.6.4</dir>
-      </namespace>
-    </library>
-  </api>
-  <api filename="../vte/vte-api.raw">
-    <library name="vte">
-      <namespace name="Vte">
-        <directory path="vte-0.13.4/src">
-          <exclude>vteseq-table.h</exclude>
-        </directory>
+        <dir>libart_lgpl-2.3.19</dir>
       </namespace>
     </library>
   </api>
