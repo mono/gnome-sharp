@@ -1,3 +1,8 @@
+2008-01-24  Mike Kestner  <mkestner@novell.com>
+
+	* bootstrap-2.16: bump version.
+	* gconf/GConf/Makefile.am: distcheck clean fix.
+
 2007-12-07  Mike Kestner  <mkestner@novell.com>
 
 	* Makefile.include: some refinement of the variable mangling.
