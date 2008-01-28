@@ -1,5 +1,9 @@
 2008-01-28  Mike Kestner  <mkestner@novell.com>
 
+	* bootstrap-2.20: bump svn version.
+
+2008-01-28  Mike Kestner  <mkestner@novell.com>
+
 	* gnome/Gnome.metadata: hide new Global class which was hiding
 	stable API.  [Fixes #356649]
 
