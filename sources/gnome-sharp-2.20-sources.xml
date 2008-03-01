@@ -25,7 +25,17 @@
     </library>
     <library name="gnomecanvas-2">
       <namespace name="Gnome">
-        <dir>libgnomecanvas-2.20.0/libgnomecanvas</dir>
+        <directory path="libgnomecanvas-2.20.0/libgnomecanvas">
+          <exclude>gailcanvas.h</exclude>
+          <exclude>gailcanvasitem.h</exclude>
+          <exclude>gailcanvasgroup.h</exclude>
+          <exclude>gailcanvaswidget.h</exclude>
+          <exclude>gailcanvastext.h</exclude>
+          <exclude>gailcanvasitemfactory.h</exclude>
+          <exclude>gailcanvasgroupfactory.h</exclude>
+          <exclude>gailcanvaswidgetfactory.h</exclude>
+          <exclude>gailcanvastextfactory.h</exclude>
+        </directory>
       </namespace>
     </library>
     <library name="gnomeui-2">

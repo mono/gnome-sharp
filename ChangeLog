@@ -1,3 +1,8 @@
+2008-02-29  Mike Kestner  <mkestner@novell.com>
+
+	* gnome/gnome-api-2.20.raw: reparse
+	* sources/gnome-sharp-2.20-sources.xml: hide private gailcanvas hdrs.
+
 2008-01-28  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-2.20: bump svn version.

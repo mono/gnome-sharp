@@ -727,88 +727,6 @@
     </class>
   </namespace>
   <namespace name="Gnome" library="gnomecanvas-2">
-    <object name="GailCanvas" cname="GailCanvas">
-      <method name="GetType" cname="gail_canvas_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-      <method name="Init" cname="gail_canvas_init" shared="true">
-        <return-type type="void" />
-        <parameters>
-          <parameter type="GType" name="canvas_type" />
-        </parameters>
-      </method>
-      <constructor cname="gail_canvas_new">
-        <parameters>
-          <parameter type="GtkWidget*" name="widget" />
-        </parameters>
-      </constructor>
-    </object>
-    <object name="GailCanvasGroup" cname="GailCanvasGroup" parent="GailCanvasItem">
-      <method name="GetType" cname="gail_canvas_group_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-      <constructor cname="gail_canvas_group_new">
-        <parameters>
-          <parameter type="GObject*" name="obj" />
-        </parameters>
-      </constructor>
-    </object>
-    <object name="GailCanvasGroupFactory" cname="GailCanvasGroupFactory" parent="AtkObjectFactory">
-      <method name="GetType" cname="gail_canvas_group_factory_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-    </object>
-    <object name="GailCanvasItem" cname="GailCanvasItem" parent="AtkGObjectAccessible">
-      <implements>
-        <interface cname="AtkComponent" />
-      </implements>
-      <method name="GetType" cname="gail_canvas_item_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-      <constructor cname="gail_canvas_item_new">
-        <parameters>
-          <parameter type="GObject*" name="obj" />
-        </parameters>
-      </constructor>
-    </object>
-    <object name="GailCanvasItemFactory" cname="GailCanvasItemFactory" parent="AtkObjectFactory">
-      <method name="GetType" cname="gail_canvas_item_factory_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-    </object>
-    <object name="GailCanvasText" cname="GailCanvasText" parent="GailCanvasItem">
-      <implements>
-        <interface cname="AtkText" />
-      </implements>
-      <method name="GetType" cname="gail_canvas_text_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-      <constructor cname="gail_canvas_text_new">
-        <parameters>
-          <parameter type="GObject*" name="obj" />
-        </parameters>
-      </constructor>
-    </object>
-    <object name="GailCanvasTextFactory" cname="GailCanvasTextFactory" parent="AtkObjectFactory">
-      <method name="GetType" cname="gail_canvas_text_factory_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-    </object>
-    <object name="GailCanvasWidget" cname="GailCanvasWidget" parent="GailCanvasItem">
-      <method name="GetType" cname="gail_canvas_widget_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-      <constructor cname="gail_canvas_widget_new">
-        <parameters>
-          <parameter type="GObject*" name="obj" />
-        </parameters>
-      </constructor>
-    </object>
-    <object name="GailCanvasWidgetFactory" cname="GailCanvasWidgetFactory" parent="AtkObjectFactory">
-      <method name="GetType" cname="gail_canvas_widget_factory_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-    </object>
     <object name="Canvas" cname="GnomeCanvas" parent="GtkLayout">
       <field name="Root" cname="root" type="GnomeCanvasItem*" />
       <field name="RedrawArea" cname="redraw_area" type="ArtUta*" />
@@ -4542,7 +4460,7 @@
     </object>
     <struct name="AppBarMsg" cname="GnomeAppBarMsg" opaque="true" />
     <struct name="GdkPixbufAsyncHandle" cname="GnomeGdkPixbufAsyncHandle" opaque="true" />
-    <struct name="IconData" cname="GnomeIconData" deprecated="1">
+    <struct name="IconData" cname="GnomeIconData">
       <field name="HasEmbeddedRect" cname="has_embedded_rect" type="gboolean" />
       <field name="X0" cname="x0" type="int" />
       <field name="Y0" cname="y0" type="int" />
