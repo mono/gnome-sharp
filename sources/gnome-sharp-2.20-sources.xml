@@ -62,6 +62,7 @@
 	  <exclude>gnome-fontmap.h</exclude>
 	  <exclude>gnome-print-encode.h</exclude>
 	  <exclude>gnome-print-frgba.h</exclude>
+	  <exclude>gnome-print-gdi.h</exclude>
 	  <exclude>gnome-print-i18n.h</exclude>
 	  <exclude>gnome-print-module.h</exclude>
 	  <exclude>gnome-print-multipage.h</exclude>

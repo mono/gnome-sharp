@@ -5799,16 +5799,6 @@
         </parameters>
       </method>
     </object>
-    <object name="PrintGdi" cname="GnomePrintGdi" parent="GnomePrintContext">
-      <method name="GetType" cname="gnome_print_gdi_get_type" shared="true">
-        <return-type type="GType" />
-      </method>
-      <constructor cname="gnome_print_gdi_new">
-        <parameters>
-          <parameter type="GnomePrintConfig*" name="config" />
-        </parameters>
-      </constructor>
-    </object>
     <object name="PrintJob" cname="GnomePrintJob" parent="GObject">
       <property name="Config" cname="config" type="GnomePrintConfig" readable="true" writeable="true" construct-only="true" />
       <property name="Context" cname="context" type="GnomePrintMeta" readable="true" writeable="true" />

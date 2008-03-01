@@ -2,6 +2,7 @@
 
 	* gnome/gnome-api-2.20.raw: reparse
 	* sources/gnome-sharp-2.20-sources.xml: hide private gailcanvas hdrs.
+	hide gnome-print-gdi.h.
 
 2008-01-28  Mike Kestner  <mkestner@novell.com>
 
