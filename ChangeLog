@@ -1,3 +1,7 @@
+2008-03-04  Mike Kestner  <mkestner@novell.com>
+
+	* bootstrap-2.20: bump version and tag.
+
 2008-02-29  Mike Kestner  <mkestner@novell.com>
 
 	* gnome/gnome-api-2.20.raw: reparse
