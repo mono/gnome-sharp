@@ -83,6 +83,13 @@ public Program (string app_id, string app_version, ModuleInfo module, string[] a
 	
 		mi.Invoke (null, iargs);
 	}
+
+	Gtk.Application.QuitPrepare += new EventHandler (OnQuitPrepare);
+}
+
+void OnQuitPrepare (object o, EventArgs args)
+{
+	Dispose ();
 }
 
 public void Run ()

@@ -1,3 +1,10 @@
+2008-04-14  Mike Kestner  <mkestner@novell.com>
+
+	* gnome/Program.custom: hook into Gtk.Application.QuitPrepare to
+	dispose our managed resources prior to invoking gtk_main_quit.  Avoids
+	a crash on exit() in toggle_ref usage after managed releases have been 
+	released.
+
 2008-03-04  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-2.20: bump version and tag.
