@@ -84,12 +84,19 @@ public Program (string app_id, string app_version, ModuleInfo module, string[] a
 		mi.Invoke (null, iargs);
 	}
 
-	Gtk.Application.QuitPrepare += new EventHandler (OnQuitPrepare);
+	HardenRef ();
 }
 
-void OnQuitPrepare (object o, EventArgs args)
+void HardenRef ()
 {
-	Dispose ();
+	// GnomeProgram installs an atexit handler which unrefs the instance, 
+	// playing havoc with the toggle_ref notification. so we hack around
+	// it here.
+	System.Type t = typeof (GLib.Object);
+	System.Reflection.FieldInfo tref_field = t.GetField ("tref", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+	object tref = tref_field.GetValue (this);
+	System.Reflection.MethodInfo harden_method = tref.GetType ().GetMethod ("Harden", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+	harden_method.Invoke (tref, null);
 }
 
 public void Run ()

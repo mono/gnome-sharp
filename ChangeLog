@@ -1,3 +1,11 @@
+2008-04-17  Mike Kestner  <mkestner@novell.com>
+
+	* bootstrap-2.20: bump gtk-sharp requirement to 2.12.1.
+	* gnome/Program.custom: revert QuitPrepare hook and instead do an
+	obnoxious hack to disable the toggle_ref mechanism for GnomeProgram.
+	Uses reflection since I didn't want to expose this hack in the public
+	GLib.Object API.
+
 2008-04-14  Mike Kestner  <mkestner@novell.com>
 
 	* gnome/Program.custom: hook into Gtk.Application.QuitPrepare to
