@@ -1,5 +1,11 @@
 2008-04-17  Mike Kestner  <mkestner@novell.com>
 
+	* bootstrap-generic: substitute the GTK_SHARP_REQUIRED_VERSION.
+	* bootstrap-2.20: check for gtk 2.12.0 and gtk-sharp 2.12.1.
+	* configure.in.in: separate the gtk+ and gtk-sharp version variables.
+
+2008-04-17  Mike Kestner  <mkestner@novell.com>
+
 	* gnome/Program.custom: use GLib.Object.Harden to avoid some
 	reflection.
 
