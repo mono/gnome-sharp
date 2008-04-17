@@ -93,10 +93,8 @@ void HardenRef ()
 	// playing havoc with the toggle_ref notification. so we hack around
 	// it here.
 	System.Type t = typeof (GLib.Object);
-	System.Reflection.FieldInfo tref_field = t.GetField ("tref", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-	object tref = tref_field.GetValue (this);
-	System.Reflection.MethodInfo harden_method = tref.GetType ().GetMethod ("Harden", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-	harden_method.Invoke (tref, null);
+	System.Reflection.MethodInfo harden_method = t.GetMethod ("Harden", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+	harden_method.Invoke (this, null);
 }
 
 public void Run ()

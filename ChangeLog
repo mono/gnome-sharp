@@ -1,5 +1,10 @@
 2008-04-17  Mike Kestner  <mkestner@novell.com>
 
+	* gnome/Program.custom: use GLib.Object.Harden to avoid some
+	reflection.
+
+2008-04-17  Mike Kestner  <mkestner@novell.com>
+
 	* bootstrap-2.20: bump gtk-sharp requirement to 2.12.1.
 	* gnome/Program.custom: revert QuitPrepare hook and instead do an
 	obnoxious hack to disable the toggle_ref mechanism for GnomeProgram.
