@@ -1,3 +1,7 @@
+2008-04-21  Mike Kestner  <mkestner@novell.com>
+
+	* bootstrap-2.20: bump version.
+
 2008-04-17  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-generic: substitute the GTK_SHARP_REQUIRED_VERSION.
