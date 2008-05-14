@@ -1,3 +1,11 @@
+2008-05-14  Stephane Delcroix  <sdelcroix@novell.com>
+
+	* bootstrap-2.20: bump to 2.20.2
+
+	* gconf/GConf/gconf-sharp.dll.config.in:
+	* gconf/GConf/ClientBase.cs: call g_type_init during initialization.
+	Fixes bnc #389328.
+
 2008-04-21  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-2.20: bump version.

@@ -37,6 +37,9 @@ namespace GConf
 	
 		[DllImport("gconf-2")]
 		static extern bool gconf_init (int argc, IntPtr argv, out IntPtr err);
+
+		[DllImport("libgobject-2.0-0.dll")]
+		static extern void g_type_init ();
 	
 		internal void Initialize ()
 		{
@@ -46,6 +49,7 @@ namespace GConf
 				gconf_init (0, IntPtr.Zero, out err);
 				if (err != IntPtr.Zero)
 					throw new GLib.GException (err);
+				g_type_init ();
 			}
 		}
 	}
