@@ -1,5 +1,11 @@
 2008-05-14  Stephane Delcroix  <sdelcroix@novell.com>
 
+	* gconf/GConf/gconf-sharp.dll.config.in:
+	* gconf/GConf/ClientBase.cs: use GType.Init () instead of
+	g_type_init ();
+
+2008-05-14  Stephane Delcroix  <sdelcroix@novell.com>
+
 	* bootstrap-2.20: bump to 2.20.2
 
 	* gconf/GConf/gconf-sharp.dll.config.in:
