@@ -1,7 +1,7 @@
 SUBDIRS = gconf gnomevfs 
 
 if ENABLE_GNOME
-GNOME_TARGETS=gnome-hello-world.exe canvas-example.exe fifteen.exe print.exe
+GNOME_TARGETS=gnome-hello-world.exe canvas-example.exe fifteen.exe
 GNOME_ASSEMBLY=../art/art-sharp.dll ../gnome/gnome-sharp.dll
 else
 GNOME_TARGETS=
@@ -35,9 +35,6 @@ canvas-example.exe: $(srcdir)/CanvasExample.cs $(assemblies)
 fifteen.exe: $(srcdir)/Fifteen.cs $(assemblies)
 	$(CSC)  /out:fifteen.exe $(references) $(srcdir)/Fifteen.cs
 
-print.exe: $(srcdir)/PrintSample.cs $(assemblies)
-	$(CSC)  /out:print.exe $(references) $(srcdir)/PrintSample.cs
-
 testvfs.exe: $(srcdir)/TestVfs.cs $(assemblies)
 	$(CSC) /debug /out:testvfs.exe $(references) $(srcdir)/TestVfs.cs
 
@@ -45,5 +42,4 @@ EXTRA_DIST = 				\
 	GnomeHelloWorld.cs		\
 	CanvasExample.cs		\
 	Fifteen.cs			\
-	PrintSample.cs			\
 	TestVfs.cs

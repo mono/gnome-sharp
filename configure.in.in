@@ -174,21 +174,20 @@ AC_SUBST(GAPI_FIXUP)
 
 ## Versions of dependencies
 GNOME_REQUIRED_VERSION=@GNOME_REQUIRED_VERSION@
-ART_REQUIRED_VERSION=2.3.19
+GNOMEVFS_REQUIRED_VERSION=2.22.0
+ART_REQUIRED_VERSION=2.3.20
 
 PKG_CHECK_MODULES(LIBART, libart-2.0 >= $ART_REQUIRED_VERSION, enable_libart=yes, enable_libart=no)
 AC_SUBST(LIBART_CFLAGS)
 AC_SUBST(LIBART_LIBS)
 
-PKG_CHECK_MODULES(GNOMEVFS, gnome-vfs-2.0 >= $GNOME_REQUIRED_VERSION, enable_gnomevfs=yes, enable_gnomevfs=no)
+PKG_CHECK_MODULES(GNOMEVFS, gnome-vfs-2.0 >= $GNOMEVFS_REQUIRED_VERSION, enable_gnomevfs=yes, enable_gnomevfs=no)
 AC_SUBST(GNOMEVFS_CFLAGS)
 AC_SUBST(GNOMEVFS_LIBS)
 
 GNOMECANVAS_REQUIRED_VERSION=@GNOMECANVAS_REQUIRED_VERSION@
-GNOMEPANEL_REQUIRED_VERSION=@GNOMEPANEL_REQUIRED_VERSION@
-GNOMEPRINT_REQUIRED_VERSION=@GNOMEPRINT_REQUIRED_VERSION@
 
-PKG_CHECK_MODULES(GNOME, libgnomecanvas-2.0 >= $GNOMECANVAS_REQUIRED_VERSION libgnomeui-2.0 >= $GNOME_REQUIRED_VERSION gtk+-2.0 >= $GTK_REQUIRED_VERSION libgnomeprintui-2.2 >= $GNOMEPRINT_REQUIRED_VERSION gmodule-2.0 >= $GTK_REQUIRED_VERSION libpanelapplet-2.0 >= $GNOMEPANEL_REQUIRED_VERSION, enable_gnome=yes, enable_gnome=no)
+PKG_CHECK_MODULES(GNOME, libgnomecanvas-2.0 >= $GNOMECANVAS_REQUIRED_VERSION libgnomeui-2.0 >= $GNOME_REQUIRED_VERSION gtk+-2.0 >= $GTK_REQUIRED_VERSION gmodule-2.0 >= $GTK_REQUIRED_VERSION, enable_gnome=yes, enable_gnome=no)
 AC_SUBST(GNOME_CFLAGS)
 AC_SUBST(GNOME_LIBS)
 
@@ -245,7 +244,6 @@ echo "            corresponding development packages for them, rerun"
 echo "            autogen.sh to include them in the build."
 echo ""
 echo "            gnome-sharp.dll requires libgnomecanvas, libgnome,"
-echo "            libgnomeui, libgnomeprint, libgnomeprintui, and"
-echo "            libpanelapplet."
+echo "            and libgnomeui."
 echo "---"
 

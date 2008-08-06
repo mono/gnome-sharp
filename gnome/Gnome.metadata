@@ -3,7 +3,6 @@
   <attr path="/api/namespace/callback[@cname='GnomeModuleClassInitHook']" name="hidden">1</attr>
   <attr path="/api/namespace/callback[@cname='GnomeModuleHook']" name="hidden">1</attr>
   <attr path="/api/namespace/callback[@cname='GnomeModuleInitHook']" name="hidden">1</attr>
-  <attr path="/api/namespace/enum[@cname='GnomePrintButtons']/member[@name='Cancel']" name="value">(int)Gtk.ResponseType.Cancel</attr>
   <attr path="/api/namespace/object[@cname='GnomeApp']/constructor[@cname='gnome_app_new']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GnomeApp']/field[@name='AccelGroup']" name="access">public</attr>
   <attr path="/api/namespace/object[@cname='GnomeApp']/field[@name='Contents']" name="access">public</attr>
@@ -20,27 +19,16 @@
   <attr path="/api/namespace/boxed[@cname='GnomeCanvasPoints']/field" name="access">private</attr>
   <attr path="/api/namespace/boxed[@cname='GnomeCanvasPoints']/method[@name='Free']" name="deprecated">1</attr>
   <attr path="/api/namespace/boxed[@cname='GnomeCanvasPoints']/method[@name='Ref']" name="deprecated">1</attr>
-  <attr path="/api/namespace/boxed[@cname='GnomeGlyphList']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/boxed[@cname='GnomeGlyphList']/method[@name='Ref']" name="deprecated">1</attr>
-  <attr path="/api/namespace/boxed[@cname='GnomeGlyphList']/method[@name='Unref']" name="deprecated">1</attr>
   <attr path="/api/namespace/boxed[@cname='GnomeModuleInfo']" name="opaque">1</attr>
   <attr path="/api/namespace/boxed[@cname='GnomeModuleInfo']/field[@name='Name']" name="access">public</attr>
   <attr path="/api/namespace/boxed[@cname='GnomeModuleInfo']/field[@name='Version']" name="access">public</attr>
   <attr path="/api/namespace/boxed[@cname='GnomeModuleInfo']/field[@name='Description']" name="access">public</attr>
-  <attr path="/api/namespace/boxed[@cname='GnomePrintUnit']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/boxed[@cname='GnomePrintUnit']/method[@name='GetIdentity']/*/*[@name='base']" name="name">Base</attr>
   <attr path="/api/namespace/callback[@cname='GnomeTriggerActionFunction']/*/*[@name='supinfo']" name="type">const-char*</attr>
   <attr path="/api/namespace/class[@cname='GnomeConfig_']/method[@name='SetSetHandler']" name="hidden">1</attr>
   <attr path="/api/namespace/class[@cname='GnomeConfig_']/method[@name='SetSyncHandler']" name="hidden">1</attr>
   <attr path="/api/namespace/class[@cname='GnomeGdk_']" name="name">GdkHelper</attr>
   <attr path="/api/namespace/class[@cname='GnomeGtk_']" name="name">GtkHelper</attr>
-  <attr path="/api/namespace[@library='gnomeprintui-2-2']/class[@cname='GnomeGlobal']" name="hidden">1</attr>
   <attr path="/api/namespace/class[@cname='GnomeGlobal']/method[@name='MdiModeGetType']" name="hidden">1</attr>
-  <attr path="/api/namespace/class[@cname='GnomePrint_']/method/*/*[@name='in']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/class[@cname='GnomePrint_']/method/*/*[@name='text']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/class[@cname='GnomePrint_']/method/*/*[@name='name']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/class[@cname='GnomePrint_']/method/*/*[@name='data']" name="type">const-guchar</attr>
-  <attr path="/api/namespace/class[@cname='GnomePrint_']/method/*/*[@name='data']" name="array">1</attr>
   <attr path="/api/namespace/class[@cname='GnomeThumbnail_']/method[@name='ScaleDownPixbuf']/return-type" name="owned">true</attr>
   <attr path="/api/namespace/object[@cname='GnomeAbout']" name="disable_void_ctor">1</attr>
   <attr path="/api/namespace/object[@cname='GnomeAbout']/constructor[@cname='gnome_about_new']" name="hidden">1</attr>
@@ -115,19 +103,7 @@
   <attr path="/api/namespace/object[@cname='GnomeFileEntry']/method[@name='GnomeEntry']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GnomeFileEntry']/method[@name='GtkEntry']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GnomeFileEntry']/signal[@name='Activate']" name="name">Activated</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method[@name='FamilyList']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method[@name='FamilyListFree']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method[@name='List']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method[@name='ListFree']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method[@name='StyleList']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method[@name='StyleListFree']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method[@name='GetFamilyName']/return-type" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFont']/method[@name='GetFullName']/return-type" name="type">gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFontFace']/method/return-type[@type='const-guchar*']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFontFace']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/object[@cname='GnomeFontPicker']/method[@name='GetFont']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GnomeFontPreview']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/object[@cname='GnomeIconEntry']/method[@name='PickDialog']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GnomeIconList']/constructor[@cname='gnome_icon_list_new']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GnomeIconList']/method[@name='GetIconFilename']/return-type" name="type">const-gchar*</attr>
@@ -140,23 +116,7 @@
   <attr path="/api/namespace/object[@cname='GnomePixmapEntry']/method[@name='GnomeEntry']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GnomePixmapEntry']/method[@name='GnomeFileEntry']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GnomePixmapEntry']/method[@name='GtkEntry']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintConfig']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintConfig']/method[@name='Get']/return-type" name="type">gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintDialog']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintDialog']/constructor[@cname='gnome_print_dialog_new']/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintDialog']/constructor[@cname='gnome_print_dialog_new']/*/*[@name='flags']" name="type">GnomePrintDialogFlags</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintFilter']/method[@name='Changed']" name="name">EmitChanged</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintFilter']/method[@name='Description']" name="name">GetDescription</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintJobPreview']/constructor/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintMeta']/method/*/*[@name='filename']" name="type">const-gchar*</attr>
-  <attr path="/api/namespace/object[@cname='GnomePrintTransport']" name="parent">GObject</attr>
   <attr path="/api/namespace/object[@cname='GnomeScores']/constructor[@cname='gnome_scores_new']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='PanelAppletShell']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='PanelApplet']/method[@cname='panel_applet_factory_main']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='PanelApplet']/method[@cname='panel_applet_factory_main_closure']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='PanelApplet']/method[@cname='panel_applet_get_flags']" name="new_flag">1</attr>
-  <attr path="/api/namespace/object[@cname='PanelApplet']/method[@cname='panel_applet_set_flasg']" name="new_flag">1</attr>
-  <attr path="/api/namespace/object[@cname='PanelApplet']" name="abstract">1</attr>
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Curveto']" name="name">CurveTo</attr>
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Lineto']" name="name">LineTo</attr>
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='LinetoMoving']" name="name">LineToMoving</attr>
@@ -166,9 +126,6 @@
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="owned">true</attr>
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Split']/return-type" name="elements_owned">true</attr>
   <attr path="/api/namespace/*[@cname='GnomeCanvasPathDef']/method[@name='Unref']" name="deprecated">1</attr>
-  <attr path="/api/namespace/struct[@cname='graph_t']" name="hidden">1</attr>
-  <attr path="/api/namespace/struct[@cname='pool_t']" name="hidden">1</attr>
   <attr path="/api/namespace/struct[@cname='GnomeModuleRequirement']" name="hidden">1</attr>
-  <attr path="/api/namespace/struct[@cname='GnomePrintPaper']/method/*/*[@type='const-guchar*']" name="type">const-gchar*</attr>
   <attr path="/api/namespace/struct[@cname='GnomeThemeFile']/method[@name='Free']" name="deprecated">1</attr>
 </metadata>

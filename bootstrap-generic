@@ -19,15 +19,11 @@ sed -e "s/@GNOME_SHARP_VERSION@/$GNOME_SHARP_VERSION/" \
     -e "s/@GTK_SHARP_REQUIRED_VERSION@/$GTK_SHARP_REQUIRED_VERSION/" \
     -e "s/@GNOME_REQUIRED_VERSION@/$GNOME_REQUIRED_VERSION/" \
     -e "s/@GNOMECANVAS_REQUIRED_VERSION@/$GNOMECANVAS_REQUIRED_VERSION/" \
-    -e "s/@GNOMEPANEL_REQUIRED_VERSION@/$GNOMEPANEL_REQUIRED_VERSION/" \
-    -e "s/@GNOMEPRINT_REQUIRED_VERSION@/$GNOMEPRINT_REQUIRED_VERSION/" \
     -e "s/@VERSIONCSDEFINES@/$VERSIONCSDEFINES/" \
     -e "s/@VERSIONCFLAGS@/$VERSIONCFLAGS/" \
     -e "s/@POLICY_VERSIONS@/$POLICY_VERSIONS/" \
     -e "s/@ASSEMBLY_VERSION@/$ASSEMBLY_VERSION/" $srcdir/configure.in.in > $srcdir/configure.in
 
-ln -f $srcdir/gnomevfs/gnome-vfs-api-$GNOME_API_TAG.raw $srcdir/gnomevfs/gnome-vfs-api.raw
-ln -f $srcdir/gnome/gnome-api-$GNOME_API_TAG.raw $srcdir/gnome/gnome-api.raw
 EOF
 
 chmod +x bootstrap.status

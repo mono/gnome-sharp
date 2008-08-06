@@ -11,7 +11,6 @@ libgnomesharpglue_2_la_LDFLAGS = -module -avoid-version -no-undefined
 libgnomesharpglue_2_la_SOURCES = 	\
 	canvasitem.c 		\
 	canvaspoints.c 		\
-	panelapplet.c		\
 	program.c		\
 	#
 

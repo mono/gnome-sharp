@@ -617,7 +617,7 @@
     </callback>
     <object name="MIMEMonitor" cname="GnomeVFSMIMEMonitor" parent="GObject">
       <field name="Priv" cname="priv" type="GnomeVFSMIMEMonitorPrivate*" />
-      <signal name="DataChanged" cname="data_changed" when="LAST">
+      <signal name="DataChanged" cname="data_changed" when="LAST" field_name="data_changed">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSMIMEMonitor*" name="monitor" />
@@ -768,21 +768,21 @@
     </object>
     <object name="Drive" cname="GnomeVFSDrive" parent="GObject">
       <field name="Priv" cname="priv" type="GnomeVFSDrivePrivate*" />
-      <signal name="VolumeMounted" cname="volume_mounted" when="FIRST">
+      <signal name="VolumeMounted" cname="volume_mounted" when="FIRST" field_name="volume_mounted">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSDrive*" name="drive" />
           <parameter type="GnomeVFSVolume*" name="volume" />
         </parameters>
       </signal>
-      <signal name="VolumePreUnmount" cname="volume_pre_unmount" when="FIRST">
+      <signal name="VolumePreUnmount" cname="volume_pre_unmount" when="FIRST" field_name="volume_pre_unmount">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSDrive*" name="drive" />
           <parameter type="GnomeVFSVolume*" name="volume" />
         </parameters>
       </signal>
-      <signal name="VolumeUnmounted" cname="volume_unmounted" when="FIRST">
+      <signal name="VolumeUnmounted" cname="volume_unmounted" when="FIRST" field_name="volume_unmounted">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSDrive*" name="drive" />
@@ -947,35 +947,35 @@
     </object>
     <object name="VolumeMonitor" cname="GnomeVFSVolumeMonitor" parent="GObject">
       <field name="Priv" cname="priv" type="GnomeVFSVolumeMonitorPrivate*" />
-      <signal name="VolumeMounted" cname="volume_mounted" when="FIRST">
+      <signal name="VolumeMounted" cname="volume_mounted" when="FIRST" field_name="volume_mounted">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSVolumeMonitor*" name="volume_monitor" />
           <parameter type="GnomeVFSVolume*" name="volume" />
         </parameters>
       </signal>
-      <signal name="VolumePreUnmount" cname="volume_pre_unmount" when="FIRST">
+      <signal name="VolumePreUnmount" cname="volume_pre_unmount" when="FIRST" field_name="volume_pre_unmount">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSVolumeMonitor*" name="volume_monitor" />
           <parameter type="GnomeVFSVolume*" name="volume" />
         </parameters>
       </signal>
-      <signal name="VolumeUnmounted" cname="volume_unmounted" when="FIRST">
+      <signal name="VolumeUnmounted" cname="volume_unmounted" when="FIRST" field_name="volume_unmounted">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSVolumeMonitor*" name="volume_monitor" />
           <parameter type="GnomeVFSVolume*" name="volume" />
         </parameters>
       </signal>
-      <signal name="DriveConnected" cname="drive_connected" when="FIRST">
+      <signal name="DriveConnected" cname="drive_connected" when="FIRST" field_name="drive_connected">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSVolumeMonitor*" name="volume_monitor" />
           <parameter type="GnomeVFSDrive*" name="drive" />
         </parameters>
       </signal>
-      <signal name="DriveDisconnected" cname="drive_disconnected" when="FIRST">
+      <signal name="DriveDisconnected" cname="drive_disconnected" when="FIRST" field_name="drive_disconnected">
         <return-type type="void" />
         <parameters>
           <parameter type="GnomeVFSVolumeMonitor*" name="volume_monitor" />

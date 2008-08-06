@@ -12,14 +12,12 @@ INCLUDE_API = ../art/art-api.xml ../gnomevfs/gnome-vfs-api.xml
 METADATA = Gnome.metadata
 SYMBOLS =
 references = ../art/art-sharp.dll ../gnomevfs/gnome-vfs-sharp.dll
-glue_includes = gnome.h,libgnomeprint/gnome-print.h,libgnomeprint/gnome-print-paper.h
+glue_includes = gnome.h
 
 sources =					\
 	BonoboUIVerb.cs				\
-	FontFamily.cs				\
 	IconTheme.cs				\
-	Modules.cs				\
-	PanelAppletFactory.cs
+	Modules.cs
 
 customs =					\
 	About.custom				\
@@ -45,15 +43,9 @@ customs =					\
 	Client.custom				\
 	Druid.custom				\
 	DruidPageEdge.custom			\
-	Font.custom				\
 	IconList.custom				\
 	IconTextItem.custom			\
-	PanelApplet.custom			\
 	Popup.custom				\
-	Print.custom				\
-	PrintContext.custom			\
-	PrintDialog.custom			\
-	PrintJob.custom				\
 	Program.custom				\
 	Scores.custom				\
 	UIInfo.custom

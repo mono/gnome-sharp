@@ -1,8 +1,8 @@
 <gapi-parser-input>
-  <api filename="../gnomevfs/gnome-vfs-api-2.20.raw">
+  <api filename="../gnomevfs/gnome-vfs-api.raw">
     <library name="gnomevfs-2">
       <namespace name="GnomeVFS">
-        <directory path="gnome-vfs-2.20.0/libgnomevfs">
+        <directory path="gnome-vfs-2.22.0/libgnomevfs">
           <exclude>gnome-vfs-file-size.h</exclude>
           <exclude>gnome-vfs-method.h</exclude>
           <exclude>gnome-vfs-transform.h</exclude>
@@ -17,15 +17,15 @@
       </namespace>
     </library>
   </api>
-  <api filename="../gnome/gnome-api-2.20.raw">
+  <api filename="../gnome/gnome-api.raw">
     <library name="gnome-2">
       <namespace name="Gnome">
-        <dir>libgnome-2.20.0/libgnome</dir>
+        <dir>libgnome-2.23.4/libgnome</dir>
       </namespace>
     </library>
     <library name="gnomecanvas-2">
       <namespace name="Gnome">
-        <directory path="libgnomecanvas-2.20.0/libgnomecanvas">
+        <directory path="libgnomecanvas-2.20.1.1/libgnomecanvas">
           <exclude>gailcanvas.h</exclude>
           <exclude>gailcanvasitem.h</exclude>
           <exclude>gailcanvasgroup.h</exclude>
@@ -40,7 +40,7 @@
     </library>
     <library name="gnomeui-2">
       <namespace name="Gnome">
-        <directory path="libgnomeui-2.20.0/libgnomeui">
+        <directory path="libgnomeui-2.23.4/libgnomeui">
 	  <!-- These were ignored in gtk# 1.0 due to a parser bug, but contain only deprecated methods -->
 	  <exclude>gnome-app-util.h</exclude>
 	  <exclude>gnome-dialog.h</exclude>
@@ -55,49 +55,11 @@
 	</directory>
       </namespace>
     </library>
-    <library name="gnomeprint-2-2">
-      <namespace name="Gnome">
-        <directory path="libgnomeprint-2.18.2/libgnomeprint">
-	  <exclude>gnome-font-family.h</exclude>
-	  <exclude>gnome-fontmap.h</exclude>
-	  <exclude>gnome-print-encode.h</exclude>
-	  <exclude>gnome-print-frgba.h</exclude>
-	  <exclude>gnome-print-gdi.h</exclude>
-	  <exclude>gnome-print-i18n.h</exclude>
-	  <exclude>gnome-print-module.h</exclude>
-	  <exclude>gnome-print-multipage.h</exclude>
-	  <exclude>gnome-print-pdf.h</exclude>
-	  <exclude>gnome-print-ps2.h</exclude>
-	  <exclude>gnome-print-rbuf.h</exclude>
-	  <exclude>gnome-print-rgbp.h</exclude>
-	  <exclude>gp-path.h</exclude>
-	  <exclude>gp-truetype-utils.h</exclude>
-	  <exclude>gp-tt-t1.h</exclude>
-	</directory>
-      </namespace>
-    </library>
-    <library name="gnomeprintui-2-2">
-      <namespace name="Gnome">
-        <directory path="libgnomeprintui-2.18.1/libgnomeprintui">
-	  <exclude>gnome-canvas-hacktext.h</exclude>
-	  <exclude>gnome-print-copies.h</exclude>
-	  <exclude>gnome-print-i18n.h</exclude>
-	  <exclude>gnome-print-paper-preview.h</exclude>
-	  <exclude>gnome-print-widget.h</exclude>
-	  <exclude>gnome-printer-selector.h</exclude>
-	</directory>
-      </namespace>
-    </library>
-    <library name="panel-applet-2">
-      <namespace name="Gnome">
-        <dir>gnome-panel-2.20.0.1/libpanel-applet</dir>
-      </namespace>
-    </library>
   </api>
   <api filename="../art/art-api.raw">
     <library name="art_lgpl">
       <namespace name="Art">
-        <dir>libart_lgpl-2.3.19</dir>
+        <dir>libart_lgpl-2.3.20</dir>
       </namespace>
     </library>
   </api>
