@@ -1,3 +1,8 @@
+2008-09-08  Mike Kestner  <mkestner@novell.com>
+
+	* bootstrap-2.24: bump gtk-sharp req to 2.12.2.  Bump version
+	to 2.24.0 for release.
+
 2008-08-06  Mike Kestner  <mkestner@novell.com>
 
 	* *: Update to Gnome 2.23.5 release API.  Remove print and panel
