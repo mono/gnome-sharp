@@ -1,3 +1,7 @@
+2008-10-06  Mike Kestner  <mkestner@novell.com>
+
+	* gnome/gnome-sharp.dll.config.in: add missing dllmap for panel.
+
 2008-05-14  Stephane Delcroix  <sdelcroix@novell.com>
 
 	* gconf/GConf/gconf-sharp.dll.config.in:
