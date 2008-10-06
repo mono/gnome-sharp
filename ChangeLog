@@ -1,3 +1,7 @@
+2008-10-06  Mike Kestner  <mkestner@novell.com>
+
+	* gnome/gnome-sharp.dll.config.in: add dllmap for panel.
+
 2008-01-24  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-2.16: bump version.
