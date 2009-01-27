@@ -1,3 +1,12 @@
+2009-01-27  Mike Kestner  <mkestner@novell.com>
+
+	* bootstrap-2.24: add back the POLICY_VERSION entries. Patch from
+	Scott Peterson.
+	* gnome/Makefile.am: add a POLICY_VERSION variable to override
+	the global setting, since gnome-sharp.dll is not compatible with
+	previous versions due to the gnomeprint and gnomepanel removal.
+	[Fixes #469663]
+
 2008-09-08  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-2.24: bump gtk-sharp req to 2.12.2.  Bump version

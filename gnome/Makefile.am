@@ -13,6 +13,7 @@ METADATA = Gnome.metadata
 SYMBOLS =
 references = ../art/art-sharp.dll ../gnomevfs/gnome-vfs-sharp.dll
 glue_includes = gnome.h
+POLICY_VERSIONS=
 
 sources =					\
 	BonoboUIVerb.cs				\
