@@ -1,3 +1,7 @@
+2009-03-03  Mike Kestner  <mkestner@novell.com>
+
+	* bootstrap-2.24: bump version to 2.24.1 and tag.
+
 2009-01-27  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-2.24: add back the POLICY_VERSION entries. Patch from
