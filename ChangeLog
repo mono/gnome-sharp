@@ -1,3 +1,10 @@
+2009-03-16  Mike Kestner  <mkestner@novell.com>
+
+	* Makefile.include: parallel make fix.
+	* gconf/GConf/Makefile.am: parallel make fix.
+	* gconf/GConf.PropertyEditors/Makefile.am: parallel make fix.
+	Patch from Peter Alfredsen.  [Fixes #483251]
+
 2009-03-03  Mike Kestner  <mkestner@novell.com>
 
 	* bootstrap-2.24: bump version to 2.24.1 and tag.
