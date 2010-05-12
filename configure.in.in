@@ -87,8 +87,16 @@ BUILD_GTK_LIBS=`$PKG_CONFIG --libs gtk+-2.0`
 AC_SUBST(BUILD_GTK_CFLAGS)
 AC_SUBST(BUILD_GTK_LIBS)
 
-MONO_REQUIRED_VERSION=1.0
+enable_monogetoptions=no
+MONO_REQUIRED_VERSION=2.7
 PKG_CHECK_MODULES(MONO_DEPENDENCY, mono >= $MONO_REQUIRED_VERSION, has_mono=true, has_mono=false)
+if test "x$has_mono" = "xfalse" ; then
+	MONO_REQUIRED_VERSION=1.0
+	PKG_CHECK_MODULES(MONO_DEPENDENCY, mono >= $MONO_REQUIRED_VERSION, has_mono=true, has_mono=false)
+	if test "x$has_mono" = "xtrue" ; then
+		enable_monogetoptions=yes
+	fi
+fi
 
 AC_PATH_PROG(GACUTIL, gacutil, no)
 if test "x$GACUTIL" = "xno" ; then
@@ -194,7 +202,7 @@ AC_SUBST(GNOME_LIBS)
 AM_CONDITIONAL(ENABLE_LIBART, test "x$enable_libart" = "xyes")
 AM_CONDITIONAL(ENABLE_GNOMEVFS, test "x$enable_gnomevfs" = "xyes")
 AM_CONDITIONAL(ENABLE_GNOME, test "x$enable_gnome" = "xyes")
-AM_CONDITIONAL(ENABLE_MONOGETOPTIONS, test "x$has_mono" = "xtrue")
+AM_CONDITIONAL(ENABLE_MONOGETOPTIONS, test "x$enable_monogetoptions" = "xyes")
 
 AC_SUBST(CFLAGS)
 
