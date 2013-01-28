@@ -1,3 +1,4 @@
 <configuration>
   <dllmap dll="gconf-2" target="libgconf-2@LIB_PREFIX@.4@LIB_SUFFIX@"/>
+  <dllmap dll="dbus" target="libdbus-1@LIB_PREFIX@.3@LIB_SUFFIX@"/>
 </configuration>

@@ -37,9 +37,15 @@ namespace GConf
 	
 		[DllImport("gconf-2")]
 		static extern bool gconf_init (int argc, IntPtr argv, out IntPtr err);
+		
+		[DllImport("dbus")]
+		static extern Int32 dbus_threads_init_default ();
 
 		internal void Initialize ()
 		{
+			/* Initialize DBus Glib for multithreading -- It can be called as many times as necessary. */
+			dbus_threads_init_default ();
+			
 			if (!gconf_is_initialized ())
 			{
 				IntPtr err;
