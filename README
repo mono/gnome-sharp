@@ -6,9 +6,9 @@ free software, licensed under the GNU LGPL.
 Building & Installing Gnome#:
 ---------------------------
 
-    The build is the traditional:
+    The build uses bootstrap instead of the traditional configure:
 
-        ./configure
+        ./bootstrap-<version>
         make
         make install
 
