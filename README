@@ -18,7 +18,7 @@ Building & Installing Gnome#:
     to make it so mono can find your assemblies.  In other words,
     doing something like:
 
-        ./bootstrap-<version> --prefix=/the/path/that/was/used/for/mono
+        ./bootstrap-2.24 --prefix=/the/path/that/was/used/for/mono
         make
         make install
 
