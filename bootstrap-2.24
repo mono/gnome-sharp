@@ -1,7 +1,7 @@
 #!/bin/sh
 # Run this to set configure.in up for an API version.
 
-GNOME_SHARP_VERSION=2.24.3
+GNOME_SHARP_VERSION=2.24.4
 ASSEMBLY_VERSION=2.24.0.0
 POLICY_VERSIONS="2.4 2.6 2.8 2.16 2.20"
 GTK_REQUIRED_VERSION=2.13.0
