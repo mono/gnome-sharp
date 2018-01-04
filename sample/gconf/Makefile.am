@@ -22,7 +22,7 @@ sample.exe: $(SCHEMA) $(srcdir)/sample.glade $(FILES) $(ASSEMBLIES)
 	$(CSC) /out:sample.exe $(FILES) $(REFERENCES) $(RESOURCES)
 
 Settings.cs: $(SCHEMA)
-	MONO_PATH=$(top_builddir)/gconf/GConf/gconf-sharp.dll:${MONO_PATH} $(RUNTIME) $(GCONFDIR)/tools/gconfsharp-schemagen.exe Sample $(SCHEMA) > Settings.cs
+	MONO_PATH=$(top_builddir)/gconf/GConf/:${MONO_PATH} $(RUNTIME) $(GCONFDIR)/tools/gconfsharp-schemagen.exe Sample $(SCHEMA) > Settings.cs
 
 CLEANFILES = sample.exe Settings.cs
 
